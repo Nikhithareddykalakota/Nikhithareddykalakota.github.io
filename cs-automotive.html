@@ -436,12 +436,15 @@ nav {
   padding: 0 6vw !important; height: 64px !important;
   display: flex !important; align-items: center !important;
   justify-content: space-between !important;
+  font-family: "DM Sans", sans-serif !important;
 }
 nav .nav-logo,
 nav .nav-back,
 nav .nav-divider,
 nav .nav-right,
 nav .nav-tag { display: none !important; }
+/* ensure nav links use portfolio colors */
+nav a.nav-links { color: var(--crimson, #8B1A1A) !important; }
 
 /* Hero clears portfolio nav */
 .hero { padding-top: 2.5rem !important; }
@@ -510,7 +513,7 @@ nav .nav-tag { display: none !important; }
   <div class="hero-inner">
     <a href="work.html" class="arca-back">← Back to Work</a>
     <p class="hero-label">Personal Project. Automotive HMI · Profile & Personalization</p>
-    <h1 class="hero-title">ARC<em>A</em></h1>
+    <h1 class="hero-title">ARCA</h1>
     <p class="hero-desc">Every car I sit in at work knows nothing about me. It doesn't know I run cold, prefer a quieter cabin, or that my commute music is different from my road-trip music. I designed the system that should have been there, a driver profile experience that feels personal, not like a settings menu.</p>
     <div class="hero-meta">
       <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Solo UI Designer</span></div>
@@ -1824,9 +1827,9 @@ protoObs.observe(protoSection);
 
 <!-- ══ PREV / NEXT NAV ══ -->
 <div class="arca-case-nav">
-  <a href="cs-saas.html" class="acn-link">
+  <a href="cs-stellantis.html" class="acn-link">
     <div class="acn-label">Previous</div>
-    <div class="acn-title">← SaaS Dashboard</div>
+    <div class="acn-title">← Making the Invisible Understandable</div>
   </a>
   <a href="cs-home-services.html" class="acn-link">
     <div class="acn-label">Next Case Study</div>
