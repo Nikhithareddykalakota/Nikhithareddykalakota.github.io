@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nikhitha Reddy Kalakota</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-page{max-width:1100px;margin:0 auto;padding:96px 6vw 80px;display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start}
+.contact-heading{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,60px);font-weight:900;color:var(--crimson);letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
+.contact-sub{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:36px}
+.contact-link-card{display:flex;gap:14px;align-items:center;background:var(--card-bg);border:1px solid var(--sand);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.cli-icon{font-size:22px;flex-shrink:0}
+.cli-label{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+.cli-val{font-size:14px;color:var(--crimson);font-weight:600}
+.quote-box{background:var(--rose-pale);border-radius:14px;padding:24px;margin-top:24px}
+.quote-text{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--crimson);line-height:1.6;margin-bottom:8px}
+.quote-attr{font-size:12px;color:var(--muted);letter-spacing:0.06em}
+.form-box{background:var(--card-bg);border:1px solid var(--sand);border-radius:16px;padding:36px}
+.form-title{font-family:'Playfair Display',serif;font-size:26px;color:var(--crimson);margin-bottom:26px;font-weight:700}
+.form-two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-error{background:#FEE8E8;border:1px solid #F5C0C0;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13px;color:#C0392B;display:none}
+.form-error.show{display:block}
+.submit-btn{width:100%;padding:16px;font-size:14px;justify-content:center}
+.form-note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+.success-box{background:var(--card-bg);border:1px solid var(--sand);border-radius:16px;padding:56px 36px;text-align:center;display:none}
+.success-box.show{display:block}
+.success-icon{font-size:52px;margin-bottom:16px}
+.success-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--crimson);margin-bottom:10px}
+.success-msg{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+@media(max-width:900px){.contact-page{grid-template-columns:1fr;gap:3rem}.form-two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="work.html">Work</a><a href="resume.html">Resume</a><a href="contact.html" class="active">Contact Me</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="contact-page">
+  <div>
+    <p class="section-eyebrow">Contact</p>
+    <h1 class="contact-heading">Let's work together.</h1>
+    <p class="contact-sub">Whether you're a hiring manager, a design team, or someone with a project that needs thoughtful UX — I'd love to hear from you.</p>
+    <div class="contact-link-card"><span class="cli-icon">📧</span><div><div class="cli-label">Email</div><a href="mailto:nikhitha@example.com" class="cli-val">nikhitha@example.com</a></div></div>
+    <div class="contact-link-card"><span class="cli-icon">🌐</span><div><div class="cli-label">Website</div><a href="https://nikhithareddy.com" class="cli-val">nikhithareddy.com</a></div></div>
+    <div class="contact-link-card"><span class="cli-icon">💼</span><div><div class="cli-label">LinkedIn</div><a href="https://www.linkedin.com/in/nikhitha-reddy-0a5a8b15b/" target="_blank" rel="noopener" class="cli-val">linkedin.com/in/nikhitha-reddy</a></div></div>
+    <div class="quote-box">
+      <p class="quote-text">"Design is not just what it looks like. Design is how it works."</p>
+      <p class="quote-attr">— Steve Jobs</p>
+    </div>
+  </div>
+  <div>
+    <div class="success-box" id="success-box">
+      <div class="success-icon">✉️</div>
+      <h2 class="success-title">Message sent!</h2>
+      <p class="success-msg" id="success-msg">Thanks for reaching out. I'll get back to you within 1–2 business days.</p>
+      <button class="btn-primary" onclick="resetForm()" style="margin:0 auto">Send Another →</button>
+    </div>
+    <div class="form-box" id="form-box">
+      <h2 class="form-title">Send a message</h2>
+      <div class="form-error" id="form-error">Please fill in your name, email, and message.</div>
+      <div class="form-two-col" style="margin-bottom:14px">
+        <div><label class="form-label" for="f-name">Name *</label><input class="form-input" id="f-name" type="text" placeholder="Your full name"></div>
+        <div><label class="form-label" for="f-email">Email *</label><input class="form-input" id="f-email" type="email" placeholder="your@email.com"></div>
+      </div>
+      <div class="form-group"><label class="form-label" for="f-subject">Subject</label><input class="form-input" id="f-subject" type="text" placeholder="e.g. Hiring inquiry, Collaboration…"></div>
+      <div class="form-group"><label class="form-label" for="f-msg">Message *</label><textarea class="form-input form-textarea" id="f-msg" rows="5" placeholder="Tell me about your project or role…"></textarea></div>
+      <p class="form-label" style="margin-bottom:10px">I'm reaching out about:</p>
+      <div class="reason-chips">
+        <button class="reason-btn" onclick="selectReason(this,'Hiring Inquiry')">Hiring Inquiry</button>
+        <button class="reason-btn" onclick="selectReason(this,'Freelance Project')">Freelance Project</button>
+        <button class="reason-btn" onclick="selectReason(this,'Collaboration')">Collaboration</button>
+        <button class="reason-btn" onclick="selectReason(this,'Feedback')">Feedback</button>
+        <button class="reason-btn" onclick="selectReason(this,'Just saying hi')">Just saying hi</button>
+      </div>
+      <button class="btn-primary submit-btn" id="submit-btn" onclick="submitForm()">Send Message →</button>
+      <p class="form-note">I typically reply within 1–2 business days.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER · NIKHITHAREDDY.COM</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="work.html">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script>
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+function selectReason(btn,r){
+  document.querySelectorAll('.reason-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.getElementById('f-subject').value=r;
+}
+function submitForm(){
+  var n=document.getElementById('f-name').value.trim();
+  var e=document.getElementById('f-email').value.trim();
+  var m=document.getElementById('f-msg').value.trim();
+  var err=document.getElementById('form-error');
+  if(!n||!e||!m){err.classList.add('show');return}
+  err.classList.remove('show');
+  var btn=document.getElementById('submit-btn');
+  btn.textContent='Sending…';btn.disabled=true;
+  setTimeout(function(){
+    document.getElementById('form-box').style.display='none';
+    var s=document.getElementById('success-box');s.classList.add('show');
+    document.getElementById('success-msg').textContent='Thanks for reaching out, '+n+'. I\'ll get back to you within 1–2 business days.';
+    btn.textContent='Send Message →';btn.disabled=false;
+  },1400);
+}
+function resetForm(){
+  ['f-name','f-email','f-subject','f-msg'].forEach(function(id){document.getElementById(id).value=''});
+  document.querySelectorAll('.reason-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('form-error').classList.remove('show');
+  document.getElementById('success-box').classList.remove('show');
+  document.getElementById('form-box').style.display='block';
+}
+</script>
+</body>
+</html>
