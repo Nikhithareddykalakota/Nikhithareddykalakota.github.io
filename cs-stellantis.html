@@ -1,140 +1,982 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reimagining the To-Go Box. Nikhitha Reddy Kalakota</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Making the Invisible Understandable — Nikhitha Reddy Kalakota</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Portfolio shared styles -->
+<link rel="stylesheet" href="style.css"/>
 <style>
-.cs-hero{background:#F5F2ED;padding:88px 6vw 56px}
-.cs-inner{max-width:1100px;margin:0 auto}
-.persona-card{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;background:var(--white);border:1px solid var(--sand);border-radius:14px;padding:24px;margin-top:20px}
-.p-avatar{width:52px;height:52px;border-radius:50%;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--crimson);flex-shrink:0}
-.p-name{font-size:15px;font-weight:600;color:var(--crimson);margin-bottom:3px}
-.p-role{font-size:11px;color:var(--rose);font-weight:500;letter-spacing:0.04em;margin-bottom:10px}
-.p-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:10px}
-.p-tags{display:flex;gap:7px;flex-wrap:wrap}
-.p-tag{background:var(--rose-pale);border-radius:4px;padding:3px 9px;font-size:11px;color:var(--crimson)}
-.img-slot{width:100%;background:var(--rose-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;border:2px dashed var(--sand);margin-top:20px}
+
+    :root {
+      --bg: #08090d;
+      --surface: #11131a;
+      --surface-2: #181b24;
+      --text: #f7f3ea;
+      --muted: #b8b3a7;
+      --soft: rgba(255,255,255,0.07);
+      --line: rgba(255,255,255,0.13);
+      --accent: #d9ff6f;
+      --accent-2: #a6e9ff;
+      --warm: #ffe4b8;
+      --radius: 28px;
+      --max: 1180px;
+      --shadow: 0 28px 90px rgba(0,0,0,.38);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(166,233,255,.16), transparent 28%),
+        radial-gradient(circle at 88% 4%, rgba(217,255,111,.16), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .case-study {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(8,9,13,.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 86px 24px 104px;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 58px;
+      align-items: center;
+      min-height: 92vh;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: .12em;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 24px rgba(217,255,111,.7);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(52px, 8vw, 104px);
+      line-height: .92;
+      letter-spacing: -.075em;
+      max-width: 860px;
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: -.06em;
+      max-width: 920px;
+    }
+
+    h3 {
+      letter-spacing: -.045em;
+      line-height: 1.1;
+    }
+
+    .hero-copy {
+      margin: 28px 0 34px;
+      color: var(--muted);
+      font-size: 20px;
+      max-width: 660px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #121212;
+      border-color: var(--accent);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-visual {
+      min-height: 560px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+      border-radius: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%);
+    }
+
+    .system-map {
+      position: absolute;
+      inset: 42px;
+      display: grid;
+      place-items: center;
+    }
+
+    .circle {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+
+    .circle.one { width: 88%; height: 88%; }
+    .circle.two { width: 62%; height: 62%; }
+    .circle.three { width: 36%; height: 36%; }
+
+    .node {
+      position: absolute;
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 16px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      box-shadow: 0 20px 55px rgba(0,0,0,.34);
+    }
+
+    .node.profile { left: 22px; top: 56px; }
+    .node.connection { right: 20px; top: 178px; background: rgba(217,255,111,.12); }
+    .node.sync { left: 110px; bottom: 50px; background: rgba(166,233,255,.13); }
+    .node.center {
+      width: 178px;
+      height: 178px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--accent);
+      color: #111;
+    }
+
+    .section {
+      padding: 96px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 21px;
+      max-width: 790px;
+      margin: 0 0 36px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .meta-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -.025em;
+      line-height: 1.25;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .visual-panel {
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .flow-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-pill {
+      border-radius: 20px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,.065);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .flow-pill b {
+      font-size: 18px;
+      letter-spacing: -.03em;
+    }
+
+    .flow-pill span {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(217,255,111,.13);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .insight-card h3,
+    .principle-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .insight-card p,
+    .principle-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .diagram {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .diagram-col {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 28px;
+    }
+
+    .diagram-col h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .diagram-col p {
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+
+    .mini-flow {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-flow div {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+    }
+
+    .good .mini-flow div {
+      border-color: rgba(217,255,111,.38);
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .phone {
+      background: #edeae2;
+      color: #151515;
+      border: 8px solid #151515;
+      border-radius: 38px;
+      padding: 16px;
+      min-height: 575px;
+      box-shadow: var(--shadow);
+    }
+
+    .phone-top {
+      width: 88px;
+      height: 6px;
+      background: #202020;
+      opacity: .85;
+      border-radius: 999px;
+      margin: 2px auto 24px;
+    }
+
+    .phone h4 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      letter-spacing: -.045em;
+      line-height: 1.1;
+    }
+
+    .phone p {
+      margin: 0 0 22px;
+      color: #5f5b52;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #eef7c8;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .ui-card {
+      background: #fff;
+      border: 1px solid #ded9cc;
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .ui-card strong {
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: -.02em;
+    }
+
+    .ui-card small {
+      color: #6a665c;
+      line-height: 1.35;
+    }
+
+    .cta-card {
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .toggle {
+      width: 46px;
+      height: 26px;
+      border-radius: 999px;
+      background: #d9ff6f;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .toggle::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #111;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+    }
+
+    .quote {
+      font-size: clamp(36px, 6vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      max-width: 980px;
+      margin: 34px 0 22px;
+    }
+
+    .footer {
+      padding: 46px 24px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .split,
+      .diagram {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 62px;
+        min-height: auto;
+      }
+
+      .hero-visual {
+        min-height: 480px;
+      }
+
+      .meta-grid,
+      .insight-grid,
+      .screen-grid,
+      .principles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+
+      .section { padding: 68px 0; }
+
+      .meta-grid,
+      .insight-grid,
+      .screen-grid,
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .node {
+        width: 108px;
+        height: 108px;
+        font-size: 14px;
+      }
+
+      .node.center {
+        width: 138px;
+        height: 138px;
+      }
+
+      .node.profile { left: 8px; top: 38px; }
+      .node.connection { right: 8px; top: 150px; }
+      .node.sync { left: 52px; bottom: 34px; }
+    }
+  
+
+/* ── Integration: portfolio nav wins ── */
+nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200 !important;
+  background: rgba(250,218,221,0.96) !important;
+  backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid #E8E2D9 !important;
+  padding: 0 6vw !important;
+  height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Case study body starts after 64px nav */
+.case-study { padding-top: 0; }
+header.hero { padding-top: 72px !important; }
+
+/* Prev/next nav */
+.cs-page-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1180px; margin: 0 auto;
+  padding: 40px 24px 64px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap; gap: 16px;
+}
+.cpn-label {
+  font-size: 10px; color: rgba(255,255,255,0.4);
+  letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 5px; font-family: 'DM Sans', sans-serif;
+}
+.cpn-title {
+  font-size: 15px; color: rgba(255,255,255,0.8); font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+}
+.cpn-link { text-decoration: none; }
+.cpn-link:hover .cpn-title { color: #d9ff6f; }
 </style>
 </head>
 <body>
+
+<!-- ══ PORTFOLIO NAV ══ -->
 <nav>
-  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-fallback">👩🏻</div>
+    <span>Nikhitha</span>
+  </a>
   <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a><a href="about.html">About</a>
-    <a href="work.html" class="active">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact Me</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact Me</a>
   </div>
   <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
 </nav>
 
-<div class="cs-hero">
-  <div class="cs-inner">
-    <a class="cs-back" href="work.html">← Back to Work</a>
-    <div class="cs-tag-row">
-      <span class="cs-pill">Design Research + Prototyping</span>
-      <span class="cs-yr">HSE521 · Spring 2022 · Team of 4</span>
-    </div>
-    <h1 class="cs-title">Reimagining<br>the To-Go Box</h1>
-    <p class="cs-tagline">Turning the most overlooked object in takeout culture into a user-centered, eco-friendly experience, through research, personas, journey mapping, and physical prototyping.</p>
-    <div class="cs-meta-grid">
-      <div class="cs-meta-card"><div class="cs-meta-label">Role</div><div class="cs-meta-val">User Research · Product Design · Prototyping</div></div>
-      <div class="cs-meta-card"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">4 Months. Spring 2022</div></div>
-      <div class="cs-meta-card"><div class="cs-meta-label">Team</div><div class="cs-meta-val">Riddhi G · Sunali R · Tejaswini B · Nikhitha R</div></div>
-      <div class="cs-meta-card"><div class="cs-meta-label">Grade</div><div class="cs-meta-val">A+ (97.25%), HSE521</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="cs-body">
-
-  <div class="cs-section">
-    <p class="section-eyebrow">The Problem</p>
-    <h2 class="section-title">Six ways the to-go box fails its users</h2>
-    <p class="section-body">No handle to carry · liquid items require separate containers · cutlery must be carried separately · non-microwaveable materials · non-eco-friendly construction · chronic leakage and spillage. Every single day, millions of people wrestle with all six.</p>
-    <div class="stat-grid">
-      <div class="stat-card"><div class="stat-num">15</div><div class="stat-lbl">participants surveyed on takeout habits</div></div>
-      <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl">in-depth user interviews conducted</div></div>
-      <div class="stat-card"><div class="stat-num">8</div><div class="stat-lbl">distinct user personas developed</div></div>
-    </div>
-  </div>
-
-  <div class="cs-section">
-    <p class="section-eyebrow">Key Persona</p>
-    <h2 class="section-title">Designing for Manjari Yengde</h2>
-    <p class="section-body">After thorough surveys and interviews, one persona emerged as our design anchor, capturing the core frustrations shared by the majority of our users.</p>
-    <div class="persona-card">
-      <div class="p-avatar">MY</div>
+<article class="case-study">
+<header class="hero">
       <div>
-        <div class="p-name">Manjari Yengde</div>
-        <div class="p-role">26 · Project Coordinator · Construction Company</div>
-        <p class="p-quote">"I just want a box that's easy to carry and won't spill my food everywhere. Is that too much to ask?"</p>
-        <div class="p-tags"><span class="p-tag">Eco-conscious</span><span class="p-tag">Always on the go</span><span class="p-tag">Microwave user</span><span class="p-tag">Practical buyer</span></div>
+        <a href="work.html" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(217,255,111,0.75);text-decoration:none;margin-bottom:20px;font-family:Inter,sans-serif;">← Back to Work</a>
+        <div class="eyebrow"><span class="dot"></span> UX Research Case Study</div>
+        <h1>Making the Invisible Understandable</h1>
+        <p class="hero-copy">
+          Improving clarity in a connected automotive profile experience by evaluating how users understand profiles, account connection, and synchronization behaviors.
+        </p>
+        
       </div>
-    </div>
-  </div>
 
-  <div class="cs-section">
-    <p class="section-eyebrow">User Journey Map</p>
-    <h2 class="section-title">5 touchpoints, one clear story</h2>
-    <p class="section-body">We traced Manjari's complete journey: Search online → Visit store → See product details → Select & pay → Share experience. Each touchpoint revealed emotional lows that drove our redesign, especially the moment of carrying and opening the box.</p>
-    <div class="img-slot" style="height:220px">📸 Add your journey map image here</div>
-  </div>
-
-  <div class="cs-section">
-    <p class="section-eyebrow">The Process</p>
-    <h2 class="section-title">From observation to prototype</h2>
-    <div class="timeline">
-      <div class="t-step">
-        <div class="t-left"><span class="t-badge">Discover</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">Surveys, interviews, and observational research</div><div class="t-step-body">Surveyed 15 participants, interviewed 4 users. Top priorities: food safety, leak-proof design, eco-friendliness. Cardboard and bamboo strongly preferred over plastic.</div></div>
+      <div class="hero-visual" aria-label="Abstract connected profile system visual">
+        <div class="grid-bg"></div>
+        <div class="system-map">
+          <div class="circle one"></div>
+          <div class="circle two"></div>
+          <div class="circle three"></div>
+          <div class="node profile">Profile</div>
+          <div class="node connection">Account<br />Connection</div>
+          <div class="node sync">Sync<br />Settings</div>
+          <div class="node center">System<br />Clarity</div>
+        </div>
       </div>
-      <div class="t-step">
-        <div class="t-left"><span class="t-badge">Define</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">8 user personas. Manjari became the design anchor</div><div class="t-step-body">Each team member built 2 personas. Manjari needed a box that carries itself, holds liquids, and doesn't embarrass her at lunch. Her frustrations shaped every decision.</div></div>
+    </header>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-label">Overview</div>
+        <h2>A functional system still needed clearer communication.</h2>
+        <p class="lead">
+          An existing profile experience allowed users to manage preferences, connect an account, and synchronize selected settings. My role was to evaluate an early prototype, identify usability risks, and recommend improvements before product decisions were finalized.
+        </p>
+
+        <div class="meta-grid">
+          <div class="card meta-card">
+            <span>Role</span>
+            <strong>UX Researcher / User Testing Lead</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Methods</span>
+            <strong>Expert Evaluation, Think-Aloud, Heuristic Review</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Participants</span>
+            <strong>5 UX / HMI Experts</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Focus</span>
+            <strong>Profiles, Account Connection, Synchronization, Feedback</strong>
+          </div>
+        </div>
       </div>
-      <div class="t-step">
-        <div class="t-left"><span class="t-badge">Design</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">3D digital model in SketchUp</div><div class="t-step-body">Designed a 3-compartment eco-box. Three sections keep food separate and prevent taste mixing. A bagasse liquid compartment holds soups without leaking.</div></div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <div class="section-label">The Challenge</div>
+          <h2>The UI was visible. The system logic was not.</h2>
+          <p class="lead">
+            Participants could complete many tasks, but opportunities emerged to make the system behavior easier to understand. The experience needed to better communicate what information belonged to a profile, what changed after account connection, and which settings were synchronized.
+          </p>
+        </div>
+
+        <div class="visual-panel">
+          <div class="flow-stack">
+            <div class="flow-pill">
+              <b>Hidden System Logic</b>
+              <span>Profile, connection, sync rules</span>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="flow-pill">
+              <b>Unclear Mental Models</b>
+              <span>Users infer what happens</span>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="flow-pill">
+              <b>Increased Cognitive Effort</b>
+              <span>More interpretation required</span>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="flow-pill">
+              <b>Opportunity for Clarity</b>
+              <span>Better labels, grouping, feedback</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="t-step">
-        <div class="t-left"><span class="t-badge">Build</span></div>
-        <div class="t-right"><div class="t-step-title">Physical prototype, cardboard, bagasse, silicone</div><div class="t-step-body">Recyclable cardboard shell · bagasse leak-proof liquid compartment (microwave-safe) · silicone carry handle · integrated cutlery slot in the lid.</div></div>
+    </section>
+
+    <section class="section" id="findings">
+      <div class="container">
+        <div class="section-label">Key Findings</div>
+        <h2>Participants completed tasks, but the experience could better explain itself.</h2>
+        <p class="lead">
+          I evaluated task-based scenarios including switching profiles, connecting accounts, managing synchronization, setting privacy controls, interpreting feedback, and navigating profile-related workflows.
+        </p>
+
+        <div class="insight-grid">
+          <div class="card insight-card">
+            <div class="icon">◐</div>
+            <h3>Profile ownership needed distinction</h3>
+            <p>Participants needed clearer cues to understand which settings were personal, shared, or eligible for synchronization.</p>
+          </div>
+
+          <div class="card insight-card">
+            <div class="icon">↗</div>
+            <h3>Connection needed more context</h3>
+            <p>The action was understandable, but the benefit and outcome of connecting an account could be communicated more clearly.</p>
+          </div>
+
+          <div class="card insight-card">
+            <div class="icon">☁</div>
+            <h3>Sync expectations varied</h3>
+            <p>Some participants assumed all settings would synchronize, revealing a need to clarify scope and behavior.</p>
+          </div>
+
+          <div class="card insight-card">
+            <div class="icon">●</div>
+            <h3>System status could be more visible</h3>
+            <p>Persistent indicators could help users understand connection state, synchronization state, and completion of recent actions.</p>
+          </div>
+
+          <div class="card insight-card">
+            <div class="icon">⌁</div>
+            <h3>Navigation introduced extra effort</h3>
+            <p>Redundant actions, additional steps, and unexpected back behavior created opportunities for flow simplification.</p>
+          </div>
+
+          <div class="card insight-card">
+            <div class="icon">✦</div>
+            <h3>Clarity improved product quality</h3>
+            <p>Expert feedback helped identify refinements that could make the final experience more intuitive for end customers.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="img-slot" style="height:260px">📸 Add your prototype photos here</div>
-  </div>
+    </section>
 
-  <div class="cs-section">
-    <p class="section-eyebrow">Outcome</p>
-    <div class="outcome-box">
-      <p class="outcome-quote">"A sustainable, user-tested redesign that addressed all 6 pain points, from chronic leakage to eco-impact, through rigorous research and iterative physical prototyping."</p>
-      <p class="outcome-attr">HSE521. Methods & Tools of Human System Engineering · Dr. Jaimie McNabb, ASU</p>
-      <span class="grade-pill">A+ &nbsp;97.25%</span>
-    </div>
-  </div>
+    <section class="section" id="direction">
+      <div class="container">
+        <div class="section-label">Design Direction</div>
+        <h2>The goal was not to add more features. It was to communicate existing behavior clearly.</h2>
+        <p class="lead">
+          The evaluation reframed the opportunity from interface fixes to mental model alignment. Profiles, account connection, and synchronization needed to be separated, explained, and supported with clearer system feedback.
+        </p>
 
+        <div class="diagram">
+          <div class="diagram-col">
+            <h3>Before: Ambiguous System Behavior</h3>
+            <p>Profile, connect, and sync felt closely tied together, requiring users to infer outcomes.</p>
+            <div class="mini-flow">
+              <div>Profile Settings</div>
+              <div>Connect</div>
+              <div>Sync</div>
+              <div>Current State</div>
+            </div>
+          </div>
 
+          <div class="diagram-col good">
+            <h3>After: Clearer Mental Model</h3>
+            <p>Connection and synchronization are treated as separate concepts with clearer choices and feedback.</p>
+            <div class="mini-flow">
+              <div>Personal Profile</div>
+              <div>Connect Account</div>
+              <div>Choose What Syncs</div>
+              <div>Persistent System Status</div>
+            </div>
+          </div>
+        </div>
 
+        <div class="principles">
+          <div class="card principle-card">
+            <h3>Make system behavior visible</h3>
+            <p>Clarify what is personal, shared, and synchronized.</p>
+          </div>
+          <div class="card principle-card">
+            <h3>Separate connection and sync</h3>
+            <p>Treat account linking and data movement as distinct decisions.</p>
+          </div>
+          <div class="card principle-card">
+            <h3>Show system status</h3>
+            <p>Communicate the current state of connection, sync, and recent actions.</p>
+          </div>
+          <div class="card principle-card">
+            <h3>Clarify value</h3>
+            <p>Explain what users gain after taking each action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visuals">
+      <div class="container">
+        <div class="section-label">Concept Visuals</div>
+        <h2>Concept screens — anonymized for portfolio use.</h2>
+        <p class="lead">
+          These screens use generic labels and neutral styling to illustrate design direction. All proprietary details, branding, and platform specifics have been removed in line with NDA requirements.
+        </p>
+
+        <div class="screen-grid">
+          <div class="phone">
+            <div class="phone-top"></div>
+            <span class="status">● Connected</span>
+            <h4>Profile Overview</h4>
+            <p>Surface ownership and current state before users make changes.</p>
+            <div class="ui-card">
+              <strong>Personal Preferences</strong>
+              <small>Saved to this profile</small>
+            </div>
+            <div class="ui-card">
+              <strong>Shared Settings</strong>
+              <small>Available across users or contexts</small>
+            </div>
+            <div class="ui-card">
+              <strong>Sync Settings</strong>
+              <small>3 selected items eligible for sync</small>
+            </div>
+          </div>
+
+          <div class="phone">
+            <div class="phone-top"></div>
+            <h4>Connect Account</h4>
+            <p>Explain the value of connecting before asking users to continue.</p>
+            <div class="ui-card">
+              <strong>What happens when you connect?</strong>
+              <small>Access selected preferences across supported experiences.</small>
+            </div>
+            <div class="ui-card">
+              <strong>What stays separate?</strong>
+              <small>Synchronization is managed in the next step.</small>
+            </div>
+            <div class="ui-card cta-card">Continue</div>
+          </div>
+
+          <div class="phone">
+            <div class="phone-top"></div>
+            <span class="status">● Sync available</span>
+            <h4>Choose What Syncs</h4>
+            <p>Turn synchronization into an explicit and understandable choice.</p>
+            <div class="ui-card toggle-row">
+              <span>
+                <strong>Display Preferences</strong>
+                <small>Sync across supported experiences</small>
+              </span>
+              <span class="toggle"></span>
+            </div>
+            <div class="ui-card toggle-row">
+              <span>
+                <strong>Audio Settings</strong>
+                <small>Sync across supported experiences</small>
+              </span>
+              <span class="toggle"></span>
+            </div>
+            <div class="ui-card toggle-row">
+              <span>
+                <strong>Privacy PIN</strong>
+                <small>Keep local only</small>
+              </span>
+              <strong>Local</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-label">Impact</div>
+        <h2>Expert feedback helped refine the experience before broader product decisions.</h2>
+        <p class="lead">
+          The evaluation identified opportunities to improve information architecture, system feedback, navigation efficiency, and communication of profile-related behaviors.
+        </p>
+
+        <div class="meta-grid">
+          <div class="card meta-card">
+            <span>Identified</span>
+            <strong>Gaps in system understanding</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Reframed</span>
+            <strong>Usability issues into mental model opportunities</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Recommended</span>
+            <strong>Clearer grouping, labels, and persistent feedback</strong>
+          </div>
+          <div class="card meta-card">
+            <span>Supported</span>
+            <strong>A more intuitive end-customer experience</strong>
+          </div>
+        </div>
+
+        <div class="quote">Complex systems become easier to use when their behavior is clearly communicated.</div>
+        <p class="lead">
+          This project reinforced that a successful experience is not defined only by whether users can complete a task. It also depends on whether users understand what the system does, why it matters, and what happens next.
+        </p>
+      </div>
+    </section>
+</article>
+
+<!-- ══ PREV / NEXT NAV ══ -->
+<div class="cs-page-nav">
+  <div></div>
+  <a href="cs-automotive.html" class="cpn-link">
+    <div class="cpn-label">Next Case Study</div>
+    <div class="cpn-title">ARCA — Driver Profile System →</div>
+  </a>
 </div>
 
-<div class="case-nav">
-  <a href="cs-health-track.html">
-    <div class="cn-label">Previous</div>
-    <div class="cn-title">← Health Track</div>
-  </a>
-  <a href="cs-blush-bones.html">
-    <div class="cn-label">Next Case Study</div>
-    <div class="cn-title">Blush & Bones →</div>
-  </a>
-</div>
-
+<!-- ══ PORTFOLIO FOOTER ══ -->
 <footer>
   <div class="footer-inner">
-    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER</div></div>
-    <div class="footer-links"><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div>
+      <div class="footer-name">Nikhitha Reddy Kalakota</div>
+      <div class="footer-sub">UXE USER TESTING LEAD · STELLANTIS · NIKHITHAREDDY.COM</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nikhitha-reddy-0a5a8b15b/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </footer>
-<script>function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}</script>
+
+<script>
+function toggleNav(){
+  document.getElementById('nav-links').classList.toggle('open');
+}
+</script>
 </body>
 </html>
