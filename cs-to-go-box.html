@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reimagining the To-Go Box. Nikhitha Reddy Kalakota</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cs-hero{background:#F5F2ED;padding:88px 6vw 56px}
+.cs-inner{max-width:1100px;margin:0 auto}
+.persona-card{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;background:var(--white);border:1px solid var(--sand);border-radius:14px;padding:24px;margin-top:20px}
+.p-avatar{width:52px;height:52px;border-radius:50%;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--crimson);flex-shrink:0}
+.p-name{font-size:15px;font-weight:600;color:var(--crimson);margin-bottom:3px}
+.p-role{font-size:11px;color:var(--rose);font-weight:500;letter-spacing:0.04em;margin-bottom:10px}
+.p-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:10px}
+.p-tags{display:flex;gap:7px;flex-wrap:wrap}
+.p-tag{background:var(--rose-pale);border-radius:4px;padding:3px 9px;font-size:11px;color:var(--crimson)}
+.img-slot{width:100%;background:var(--rose-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;border:2px dashed var(--sand);margin-top:20px}
+
+.cs-img { width: 100%; border-radius: 12px; margin-top: 20px; display: block; border: 1px solid var(--sand); }
+.cs-img-caption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; font-style: italic; }
+.cs-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media(max-width:600px){ .cs-img-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="work.html" class="active">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact Me</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="cs-hero">
+  <div class="cs-inner">
+    <a class="cs-back" href="work.html">← Back to Work</a>
+    <div class="cs-tag-row">
+      <span class="cs-pill">Design Research + Prototyping</span>
+      <span class="cs-yr">HSE521 · Spring 2022 · Team of 4</span>
+    </div>
+    <h1 class="cs-title">Reimagining<br>the To-Go Box</h1>
+    <p class="cs-tagline">Turning the most overlooked object in takeout culture into a user-centered, eco-friendly experience, through research, personas, journey mapping, and physical prototyping.</p>
+    <div class="cs-meta-grid">
+      <div class="cs-meta-card"><div class="cs-meta-label">Role</div><div class="cs-meta-val">User Research · Product Design · Prototyping</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">4 Months. Spring 2022</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Team</div><div class="cs-meta-val">Riddhi G · Sunali R · Tejaswini B · Nikhitha R</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Grade</div><div class="cs-meta-val">A+ (97.25%), HSE521</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <p class="section-eyebrow">The Problem</p>
+    <h2 class="section-title">Six ways the to-go box fails its users</h2>
+    <p class="section-body">No handle to carry · liquid items require separate containers · cutlery must be carried separately · non-microwaveable materials · non-eco-friendly construction · chronic leakage and spillage. Every single day, millions of people wrestle with all six.</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">15</div><div class="stat-lbl">participants surveyed on takeout habits</div></div>
+      <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl">in-depth user interviews conducted</div></div>
+      <div class="stat-card"><div class="stat-num">8</div><div class="stat-lbl">distinct user personas developed</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">Key Persona</p>
+    <h2 class="section-title">Designing for Manjari Yengde</h2>
+    <p class="section-body">After thorough surveys and interviews, one persona emerged as our design anchor, capturing the core frustrations shared by the majority of our users.</p>
+    <div class="persona-card">
+      <div class="p-avatar">MY</div>
+      <div>
+        <div class="p-name">Manjari Yengde</div>
+        <div class="p-role">26 · Project Coordinator · Construction Company</div>
+        <p class="p-quote">"I just want a box that's easy to carry and won't spill my food everywhere. Is that too much to ask?"</p>
+        <div class="p-tags"><span class="p-tag">Eco-conscious</span><span class="p-tag">Always on the go</span><span class="p-tag">Microwave user</span><span class="p-tag">Practical buyer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">User Journey Map</p>
+    <h2 class="section-title">5 touchpoints, one clear story</h2>
+    <p class="section-body">We traced Manjari's complete journey: Search online → Visit store → See product details → Select & pay → Share experience. Each touchpoint revealed emotional lows that drove our redesign, especially the moment of carrying and opening the box.</p>
+    <div class="img-slot" style="height:220px">📸 Add your journey map image here</div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">The Process</p>
+    <h2 class="section-title">From observation to prototype</h2>
+    <div class="timeline">
+      <div class="t-step">
+        <div class="t-left"><span class="t-badge">Discover</span><div class="t-line"></div></div>
+        <div class="t-right"><div class="t-step-title">Surveys, interviews, and observational research</div><div class="t-step-body">Surveyed 15 participants, interviewed 4 users. Top priorities: food safety, leak-proof design, eco-friendliness. Cardboard and bamboo strongly preferred over plastic.</div></div>
+      </div>
+      <div class="t-step">
+        <div class="t-left"><span class="t-badge">Define</span><div class="t-line"></div></div>
+        <div class="t-right"><div class="t-step-title">8 user personas. Manjari became the design anchor</div><div class="t-step-body">Each team member built 2 personas. Manjari needed a box that carries itself, holds liquids, and doesn't embarrass her at lunch. Her frustrations shaped every decision.</div></div>
+      </div>
+      <div class="t-step">
+        <div class="t-left"><span class="t-badge">Design</span><div class="t-line"></div></div>
+        <div class="t-right"><div class="t-step-title">3D digital model in SketchUp</div><div class="t-step-body">Designed a 3-compartment eco-box. Three sections keep food separate and prevent taste mixing. A bagasse liquid compartment holds soups without leaking.</div></div>
+      </div>
+      <div class="t-step">
+        <div class="t-left"><span class="t-badge">Build</span></div>
+        <div class="t-right"><div class="t-step-title">Physical prototype, cardboard, bagasse, silicone</div><div class="t-step-body">Recyclable cardboard shell · bagasse leak-proof liquid compartment (microwave-safe) · silicone carry handle · integrated cutlery slot in the lid.</div></div>
+      </div>
+    </div>
+    <div class="cs-img-row">
+      <div>
+        <img src="images/tgb-digital-design.jpg" alt="To-Go Box SketchUp 3D digital design" class="cs-img">
+        <p class="cs-img-caption">Digital design — SketchUp 3D model showing 3-compartment eco-box</p>
+      </div>
+      <div>
+        <img src="images/tgb-prototype.jpg" alt="To-Go Box physical prototype" class="cs-img">
+        <p class="cs-img-caption">Physical prototype — cardboard, bagasse, silicone handle</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">Outcome</p>
+    <div class="outcome-box">
+      <p class="outcome-quote">"A sustainable, user-tested redesign that addressed all 6 pain points, from chronic leakage to eco-impact, through rigorous research and iterative physical prototyping."</p>
+      <p class="outcome-attr">HSE521. Methods & Tools of Human System Engineering · Dr. Jaimie McNabb, ASU</p>
+      <span class="grade-pill">A+ &nbsp;97.25%</span>
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="case-nav">
+  <a href="cs-health-track.html">
+    <div class="cn-label">Previous</div>
+    <div class="cn-title">← Health Track</div>
+  </a>
+  <a href="cs-blush-bones.html">
+    <div class="cn-label">Next Case Study</div>
+    <div class="cn-title">Blush & Bones →</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script>function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}</script>
+</body>
+</html>

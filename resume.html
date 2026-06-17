@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Nikhitha Reddy Kalakota</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.resume-page{max-width:780px;margin:0 auto;padding:96px 6vw 80px}
+.resume-hero-title{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,64px);font-weight:900;color:var(--crimson);letter-spacing:-2px;margin-bottom:8px}
+.resume-sub{font-size:15px;color:var(--muted);margin-bottom:40px}
+.download-btn{display:inline-flex;align-items:center;gap:10px;background:var(--crimson);color:var(--white);border:none;border-radius:8px;padding:16px 32px;font-size:15px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;transition:background 0.2s;margin-bottom:52px}
+.download-btn:hover{background:var(--crimson-mid)}
+.download-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.resume-note{background:var(--rose-pale);border:1px solid var(--sand);border-radius:10px;padding:18px 22px;margin-bottom:52px;font-size:14px;color:var(--muted);line-height:1.6}
+.resume-note strong{color:var(--crimson)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="work.html">Work</a><a href="resume.html" class="active">Resume</a><a href="contact.html">Contact Me</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="resume-page">
+  <p class="section-eyebrow">Resume</p>
+  <h1 class="resume-hero-title">Nikhitha Reddy Kalakota</h1>
+  <p class="resume-sub">Product Designer · UX Researcher · nikhithareddy.com</p>
+
+  <a href="NikhithaReddy_Resume.pdf" target="_blank" rel="noopener" class="download-btn">
+    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Open Resume PDF
+  </a>
+
+  <div class="resume-block">
+    <div class="resume-divider-row"><h2 class="resume-block-title">Experience</h2><div class="resume-line"></div></div>
+    <div class="resume-card">
+      <div class="resume-card-title">UX Researcher / Testing Lead</div>
+      <div class="resume-card-sub">Stellantis · Automotive Industry · Current</div>
+      <div class="resume-card-detail">Leading end-to-end UX research across 15+ automotive projects. Methods include moderated usability studies (30 participants/study), expert evaluations (5–6 specialists), and large-scale surveys via SurveyMonkey and UserTesting.com (600+ responses). Translating complex human behavior data into actionable design decisions for in-vehicle interfaces and experiences.</div>
+    </div>
+  </div>
+
+  <div class="resume-block">
+    <div class="resume-divider-row"><h2 class="resume-block-title">Selected Projects</h2><div class="resume-line"></div></div>
+    <div class="resume-card"><div class="resume-card-title">Automotive UI Design — Stellantis</div><div class="resume-card-sub">UX Research / Testing Lead · In Progress</div><div class="resume-card-detail">Full usability study and research program for in-vehicle interface design at one of the world's largest automotive companies.</div></div>
+    <div class="resume-card"><div class="resume-card-title">To-Go Box Redesign — Product Design</div><div class="resume-card-sub">HSE521 · Team of 4</div><div class="resume-card-detail">End-to-end product redesign using surveys, personas, journey maps, and physical prototyping.</div></div>
+    <div class="resume-card"><div class="resume-card-title">Health Track — UX Strategy</div><div class="resume-card-sub">TWC544 · Solo</div><div class="resume-card-detail">Health data management app using Garrett's 5 Planes from research strategy to hi-fi prototypes. Professor praised as market-ready.</div></div>
+    <div class="resume-card"><div class="resume-card-title">Blush & Bones — UX Research Study</div><div class="resume-card-sub">GIT542 · Solo</div><div class="resume-card-detail">Heuristic evaluation, 10 user interviews, moderated usability testing (5 users, 9 tasks), and working prototype redesign.</div></div>
+  </div>
+
+  <div class="resume-block">
+    <div class="resume-divider-row"><h2 class="resume-block-title">Education</h2><div class="resume-line"></div></div>
+    <div class="resume-card"><div class="resume-card-title">Master's Degree — Human Systems Engineering / UX</div><div class="resume-card-sub">Arizona State University</div><div class="resume-card-detail">Human factors, UX strategy, and iterative user-centered design.</div></div>
+  </div>
+
+  <div class="resume-block">
+    <div class="resume-divider-row"><h2 class="resume-block-title">Skills</h2><div class="resume-line"></div></div>
+    <div class="resume-card"><div class="resume-card-title">Research Methods</div><div class="resume-card-detail">Moderated Usability Testing · Expert Evaluation · Heuristic Evaluation · Think-Aloud Protocol · User Interviews · Survey Design · Observational Research · Persona Development · Journey Mapping · User Stories</div></div>
+    <div class="resume-card"><div class="resume-card-title">Platforms & Tools</div><div class="resume-card-detail">UserTesting.com · SurveyMonkey · Figma · Miro · Adobe XD · SketchUp · Microsoft Office</div></div>
+    <div class="resume-card"><div class="resume-card-title">Domain Expertise</div><div class="resume-card-detail">Automotive UX · In-Vehicle Interface Research · Human Factors · Information Architecture · UX Strategy · Wireframing · Prototyping · Cross-cultural Design</div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER · NIKHITHAREDDY.COM</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="work.html">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script>function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}</script>
+</body>
+</html>
