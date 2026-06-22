@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Nikhitha Reddy Kalakota</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.work-hero{padding:96px 6vw 48px;max-width:1100px;margin:0 auto}
+.work-hero h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,72px);font-weight:900;color:var(--crimson);letter-spacing:-2.5px;line-height:1.05;margin-bottom:16px}
+.work-intro{font-size:18px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:40px}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.filter-btn{background:var(--white);color:var(--muted);border:1px solid var(--sand);border-radius:24px;padding:9px 20px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.filter-btn.active{background:var(--crimson);color:var(--white);border-color:var(--crimson)}
+.filter-btn:hover:not(.active){border-color:var(--rose);color:var(--crimson)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto;padding:0 6vw 40px}
+.coming-soon-card{background:var(--card-bg);border:2px dashed var(--sand);border-radius:16px;padding:48px 32px;text-align:center;cursor:default}
+.coming-soon-card:hover{transform:none;box-shadow:none}
+.cs-icon{font-size:40px;margin-bottom:14px}
+.cs-label{font-size:13px;color:var(--rose);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.cs-note{font-size:13px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.work-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.work-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="resume.html">Resume</a><a href="contact.html">Contact Me</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="work-hero">
+  <p class="section-eyebrow">Portfolio</p>
+  <h1>All Work</h1>
+  <p class="work-intro">Case studies spanning product design, UX strategy, usability research, and UI design. Each project is told as a story from problem to solution.</p>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all',this)">All</button>
+    <button class="filter-btn" onclick="filter('research',this)">Design Research</button>
+    <button class="filter-btn" onclick="filter('ux',this)">UX Research</button>
+    <button class="filter-btn" onclick="filter('strategy',this)">UX Strategy</button>
+    <button class="filter-btn" onclick="filter('ui',this)">UI Design</button>
+        <button class="filter-btn" onclick="filter('graphic',this)">Graphic Design</button>
+  </div>
+</div>
+
+<div class="work-grid" id="work-grid">
+
+  <!-- 1. Stellantis — UX Research Industry Project -->
+  <a href="cs-stellantis.html" class="project-card" data-cat="ux">
+    <div class="card-cover" style="background:#08090d;display:flex;align-items:center;justify-content:center">
+      <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d9ff6f;opacity:0.9">Stellantis</span>
+    </div>
+    <div class="card-body">
+      <p class="card-eyebrow">UX Research · 2026</p>
+      <h3 class="card-title">Making the Invisible Understandable</h3>
+      <p class="card-desc">Expert evaluation and usability research on a driver profile system at Stellantis. NDA-friendly — process and findings only.</p>
+      <div class="card-chips"><span class="chip">Expert Evaluation</span><span class="chip">Automotive</span><span class="chip">Industry</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 2. ARCA — Automotive UI Design 2026 -->
+  <a href="cs-automotive.html" class="project-card" data-cat="ui">
+    <div class="card-cover" style="background:#0d1426">🚗</div>
+    <div class="card-body">
+      <p class="card-eyebrow">Automotive UI Design · 2026</p>
+      <h3 class="card-title">ARCA — Driver Profile System</h3>
+      <p class="card-desc">A dark-themed in-vehicle driver profile system for a next-generation automotive HMI. Four interactive states, designed for speed and safety.</p>
+      <div class="card-chips"><span class="chip">HMI Design</span><span class="chip">Automotive UX</span><span class="chip">Side Project</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 3. Home Services 2023 -->
+  <a href="cs-home-services.html" class="project-card" data-cat="ui">
+    <div class="card-cover" style="background:#FDF0F2">🏠</div>
+    <div class="card-body">
+      <p class="card-eyebrow">UX Design · 2023</p>
+      <h3 class="card-title">Home Services In-Home Repair Platform</h3>
+      <p class="card-desc">End-to-end experience design for a net-new in-home repair offering. Three SPAs shipped to production, WCAG 2.1 AA compliant, 30% increased user reach.</p>
+      <div class="card-chips"><span class="chip">SPA Design</span><span class="chip">WCAG 2.1</span><span class="chip">Shipped</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 4. Health Track 2023 -->
+  <a href="cs-health-track.html" class="project-card" data-cat="strategy">
+    <div class="card-cover" style="background:#E8F2EE">🏥</div>
+    <div class="card-body">
+      <p class="card-eyebrow">UX Strategy · 2023</p>
+      <h3 class="card-title">Health Track</h3>
+      <p class="card-desc">A centralized health companion designed to eliminate fragmented medical records, sparked by a real gap faced by international students.</p>
+      <div class="card-chips"><span class="chip">5 Planes Framework</span><span class="chip">Wireframing</span><span class="chip">Figma</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 5. To-Go Box 2022 -->
+  <a href="cs-to-go-box.html" class="project-card" data-cat="research">
+    <div class="card-cover" style="background:#F5F2ED">📦</div>
+    <div class="card-body">
+      <p class="card-eyebrow">Research + Product Design · 2022</p>
+      <h3 class="card-title">Reimagining the To-Go Box</h3>
+      <p class="card-desc">Turning a mundane container into a user-centered, eco-friendly experience through research, personas, and physical prototyping.</p>
+      <div class="card-chips"><span class="chip">User Research</span><span class="chip">Journey Mapping</span><span class="chip">Prototyping</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 6. Blush & Bones 2022 -->
+  <a href="cs-blush-bones.html" class="project-card" data-cat="ux">
+    <div class="card-cover" style="background:#EEEDFE">💍</div>
+    <div class="card-body">
+      <p class="card-eyebrow">UX Research · 2022</p>
+      <h3 class="card-title">Blush & Bones</h3>
+      <p class="card-desc">A full UX research sprint on an Indian jewelry e-commerce platform. Heuristic evaluation, usability testing, and prototype redesign.</p>
+      <div class="card-chips"><span class="chip">Heuristics</span><span class="chip">Usability Testing</span><span class="chip">Personas</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+  <!-- 7. Molly Moon's Ice Cream Brand Design -->
+  <a href="cs-icecream.html" class="project-card" data-cat="graphic">
+    <div class="card-cover" style="background:#7ECECA">🍦</div>
+    <div class="card-body">
+      <p class="card-eyebrow">Graphic Design · 2023</p>
+      <h3 class="card-title">Molly Moon's — Brand Identity & Package Design</h3>
+      <p class="card-desc">A complete brand identity and packaging system for Seattle's beloved local ice cream shop. Logo system, five colorways, tub packaging, and environmental applications.</p>
+      <div class="card-chips"><span class="chip">Brand Identity</span><span class="chip">Package Design</span><span class="chip">Adobe XD</span></div>
+      <span class="card-link">Read case study →</span>
+    </div>
+  </a>
+
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER · NIKHITHAREDDY.COM</div></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="work.html">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+function filter(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(function(c){
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+  });
+}
+</script>
+</body>
+</html>

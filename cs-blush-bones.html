@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blush & Bones. Nikhitha Reddy Kalakota</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cs-hero{background:#F0EEFE;padding:88px 6vw 56px}
+.cs-inner{max-width:1100px;margin:0 auto}
+.persona-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:640px){.persona-row{grid-template-columns:1fr}}
+.p-mini{background:var(--white);border:1px solid var(--sand);border-radius:12px;padding:18px}
+.p-avatar{width:36px;height:36px;border-radius:50%;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--crimson);margin-bottom:10px}
+.p-name{font-size:13px;font-weight:600;color:var(--crimson);margin-bottom:3px}
+.p-role{font-size:11px;color:var(--rose);margin-bottom:7px}
+.p-goal{font-size:12px;color:var(--muted);line-height:1.5}
+.issue-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}
+.issue-table th{text-align:left;padding:10px 14px;background:var(--rose-pale);color:var(--crimson);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700}
+.issue-table td{padding:10px 14px;border-bottom:1px solid var(--sand);color:var(--muted);vertical-align:top}
+.issue-table tr:last-child td{border-bottom:none}
+.sev{display:inline-block;border-radius:12px;padding:2px 10px;font-size:10px;font-weight:700;letter-spacing:0.06em}
+.sev-major{background:#FEE8E8;color:#C0392B}
+.sev-strong{background:var(--rose-pale);color:var(--crimson)}
+.sev-minor{background:var(--sand);color:var(--muted)}
+.img-slot{width:100%;background:var(--rose-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;border:2px dashed var(--sand);margin-top:20px}
+
+.cs-img { width: 100%; border-radius: 12px; margin-top: 20px; display: block; border: 1px solid var(--sand); }
+.cs-img-caption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; font-style: italic; }
+.cs-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media(max-width:600px){ .cs-img-row { grid-template-columns: 1fr; } }
+.ba-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.ba-label.before{background:var(--sand);color:var(--muted)}
+.ba-label.after{background:var(--crimson);color:var(--white)}
+
+/* ── REDESIGN SLIDER ── */
+.bb-slider{border:1px solid var(--sand);border-radius:14px;overflow:hidden;background:var(--white);margin-top:20px}
+.bb-slider-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--cream);border-bottom:1px solid var(--sand)}
+.bb-slider-dots{display:flex;gap:6px}
+.bb-slider-dot{width:8px;height:8px;border-radius:50%;background:var(--sand)}
+.bb-slider-stage{font-size:12px;color:var(--muted);font-weight:500}
+.bb-slider-viewport{position:relative;overflow:hidden;background:var(--cream)}
+.bb-slider-track{display:flex;transition:transform .35s ease}
+.bb-slide{flex:0 0 100%;min-width:100%}
+.bb-slide img{width:100%;display:block}
+.bb-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid var(--sand);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--crimson);z-index:5}
+.bb-slider-arrow.prev{left:14px}
+.bb-slider-arrow.next{right:14px}
+.bb-screen-tabs{display:flex;gap:0;border-top:1px solid var(--sand);flex-wrap:wrap}
+.bb-screen-tab{flex:1;min-width:110px;font-size:11.5px;padding:.65rem .5rem;background:var(--card-bg);border:none;border-right:1px solid var(--sand);cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .15s}
+.bb-screen-tab:last-child{border-right:none}
+.bb-screen-tab.active{background:var(--crimson);color:var(--white);font-weight:600}
+.bb-slide-caption{font-size:12px;color:var(--muted);text-align:center;padding:12px 18px 16px;font-style:italic}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-fallback">👩🏻</div><span>Nikhitha</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="work.html" class="active">Work</a><a href="resume.html">Resume</a><a href="contact.html">Contact Me</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="cs-hero">
+  <div class="cs-inner">
+    <a class="cs-back" href="work.html">← Back to Work</a>
+    <div class="cs-tag-row">
+      <span class="cs-pill">UX Research + Usability Testing</span>
+      <span class="cs-yr">GIT542 · 2022 · Solo Project</span>
+    </div>
+    <h1 class="cs-title">Blush & Bones —<br>Usability Study</h1>
+    <p class="cs-tagline">A full UX research sprint on a real Indian jewelry e-commerce platform, from heuristic evaluation and user interviews to moderated usability testing and a redesigned prototype.</p>
+    <div class="cs-meta-grid">
+      <div class="cs-meta-card"><div class="cs-meta-label">Role</div><div class="cs-meta-val">UX Researcher & Designer. Solo</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">6 Weeks, 2022</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Method</div><div class="cs-meta-val">Nielsen's 10 Heuristics</div></div>
+      <div class="cs-meta-card"><div class="cs-meta-label">Tools</div><div class="cs-meta-val">Figma · Miro · Adobe XD</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-body">
+  <div class="cs-section">
+    <p class="section-eyebrow">The Problem</p>
+    <h2 class="section-title">Beautiful products, buried by bad UX</h2>
+    <p class="section-body">blushandbones.com had a passionate founder and a stunning curated collection of Indian jewelry, but redundant search, no sort or filter, broken social media links, and zero delivery estimates were costing real customers. I treated it as a live research lab.</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">10</div><div class="stat-lbl">users interviewed about shopping behaviors</div></div>
+      <div class="stat-card"><div class="stat-num">9</div><div class="stat-lbl">usability tasks across 3 scenarios</div></div>
+      <div class="stat-card"><div class="stat-num">7</div><div class="stat-lbl">usability issues identified and resolved</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">User Personas</p>
+    <h2 class="section-title">Three archetypes from real interviews</h2>
+    <div class="persona-row">
+      <div class="p-mini"><div class="p-avatar">SL</div><div class="p-name">Subha Lakshmi</div><div class="p-role">32 · Web Developer · New Jersey</div><div class="p-goal">Wants style tips, AR product view, and outfit ideas before purchasing.</div></div>
+      <div class="p-mini"><div class="p-avatar">DM</div><div class="p-name">Deekshitha Madhupathi</div><div class="p-role">34 · Data Developer · Florida</div><div class="p-goal">Needs clear checkout, customer service, and proper product information links.</div></div>
+      <div class="p-mini"><div class="p-avatar">PS</div><div class="p-name">Power Shopper</div><div class="p-role">28 · Frequent online buyer</div><div class="p-goal">Expects fast search, reliable filters, and trusted reviews before buying.</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">The Process</p>
+    <h2 class="section-title">Full research sprint in six weeks</h2>
+    <div class="timeline">
+      <div class="t-step"><div class="t-left"><span class="t-badge">Evaluate</span><div class="t-line"></div></div><div class="t-right"><div class="t-step-title">Nielsen's 10 heuristics, 3-tier severity scale</div><div class="t-step-body">Applied all 10 heuristics with Minor → Serious → Catastrophic severity ratings. Issues flagged across visibility, consistency, error prevention, and flexibility.</div></div></div>
+      <div class="t-step"><div class="t-left"><span class="t-badge">Research</span><div class="t-line"></div></div><div class="t-right"><div class="t-step-title">10 interviews, 3 personas, user stories with acceptance criteria</div><div class="t-step-body">Dual approach, users familiar with the site gave specific feedback; unfamiliar users provided broader e-commerce behavior insights.</div></div></div>
+      <div class="t-step"><div class="t-left"><span class="t-badge">Test</span><div class="t-line"></div></div><div class="t-right"><div class="t-step-title">Moderated usability testing, 3 scenarios, 9 tasks</div><div class="t-step-body">Diwali shopping · returns & complaints · first-time purchase. 5 participants, recorded task times, completion rates, and emotional reactions in real time.</div></div></div>
+      <div class="t-step"><div class="t-left"><span class="t-badge">Redesign</span></div><div class="t-right"><div class="t-step-title">5 working prototypes delivered</div><div class="t-step-body">Smart category search · Sort & filter (price, color, size, type) · Linked social pages · Delivery time estimates · Customer review system with reward incentives.</div></div></div>
+    </div>
+    <span class="ba-label before">Before · 2022</span>
+    <img src="images/bb-before-results-2022.jpg" alt="Blush & Bones 2022 rings results page — no sort feedback, dated layout" class="cs-img" style="max-width:520px">
+    <p class="cs-img-caption">Original site — dense grid, no filter state shown, basic sort dropdown</p>
+
+    <div style="margin-top:36px">
+      <span class="ba-label after">After · Redesigned 2026</span>
+      <div class="bb-slider" id="bb-slider">
+        <div class="bb-slider-bar">
+          <div class="bb-slider-dots" id="bb-dots"></div>
+          <span class="bb-slider-stage" id="bb-stage">Screen 1 of 5 · Home</span>
+        </div>
+        <div class="bb-slider-viewport">
+          <div class="bb-slider-track" id="bb-track">
+            <div class="bb-slide"><img src="images/bb-redesign-1-home.jpg" alt="Redesigned 2026 Blush & Bones homepage with new logo and hero banner"></div>
+            <div class="bb-slide"><img src="images/bb-redesign-2-results.jpg" alt="Redesigned 2026 rings results page with filter chips, sort, badges and wishlist"></div>
+            <div class="bb-slide"><img src="images/bb-redesign-3-filters.jpg" alt="Redesigned 2026 filters applied screen with active filter pills and live results"></div>
+            <div class="bb-slide"><img src="images/bb-redesign-4-pdp.jpg" alt="Redesigned 2026 product detail page with ratings, finish options and reviews"></div>
+            <div class="bb-slide"><img src="images/bb-redesign-5-cart.jpg" alt="Redesigned 2026 cart page with order summary and checkout"></div>
+          </div>
+          <div class="bb-slider-arrow prev" onclick="bbSlide(-1)">←</div>
+          <div class="bb-slider-arrow next" onclick="bbSlide(1)">→</div>
+        </div>
+        <div class="bb-screen-tabs" id="bb-tabs">
+          <button class="bb-screen-tab active" onclick="bbGoTo(0,this)">1. Home</button>
+          <button class="bb-screen-tab" onclick="bbGoTo(1,this)">2. Results</button>
+          <button class="bb-screen-tab" onclick="bbGoTo(2,this)">3. Filters</button>
+          <button class="bb-screen-tab" onclick="bbGoTo(3,this)">4. Product</button>
+          <button class="bb-screen-tab" onclick="bbGoTo(4,this)">5. Cart</button>
+        </div>
+      </div>
+      <p class="cs-img-caption">Redesigned concept — new logo, filter chips, live result counts, badges, and a streamlined checkout. Slide through all 5 screens →</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">Issues Found</p>
+    <h2 class="section-title">7 issues, all resolved</h2>
+    <table class="issue-table">
+      <thead><tr><th>Issue</th><th>Severity</th><th>Fix Delivered</th></tr></thead>
+      <tbody>
+        <tr><td>Redundant search giving irrelevant results</td><td><span class="sev sev-major">Major</span></td><td>Category-based smart search</td></tr>
+        <tr><td>No sort or filter options in categories</td><td><span class="sev sev-major">Major</span></td><td>Sort + filter by price, color, size, type</td></tr>
+        <tr><td>Social media links lead to empty pages</td><td><span class="sev sev-strong">Strong</span></td><td>Linked to active FB and Instagram</td></tr>
+        <tr><td>Too much information in returns policy</td><td><span class="sev sev-minor">Minor</span></td><td>Simplified policy with clear sections</td></tr>
+        <tr><td>No estimated delivery time shown</td><td><span class="sev sev-minor">Minor</span></td><td>Delivery estimate added to product pages</td></tr>
+        <tr><td>No customer reviews or product descriptions</td><td><span class="sev sev-minor">Minor</span></td><td>Review system + reward incentives</td></tr>
+      </tbody>
+    </table>
+    <img src="images/bb-study-report.jpg" alt="Blush & Bones usability study report dashboard" class="cs-img" style="margin-top:24px">
+    <p class="cs-img-caption">Usability testing study summary — 5 participants, 9 tasks, issues and frequency analysis</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="section-eyebrow">Outcome</p>
+    <div class="outcome-box">
+      <p class="outcome-quote">"7 usability issues identified and resolved. Post-redesign: 5 of 9 tasks reached 100% completion rate. Core shopping flows fully resolved."</p>
+      <p class="outcome-attr">GIT542, UX Research Process, ASU</p>
+      <span class="grade-pill">Completed · GIT542</span>
+    </div>
+
+    <p class="section-eyebrow" style="margin-top:40px">Revisiting the Redesign — 2026</p>
+    <h2 class="section-title">Translating the 2022 fixes into a modern visual language</h2>
+    <p class="section-body">The original recommendations still hold, smart search, sort and filter, reviews, delivery transparency, but I revisited the visual execution against 2026 UI conventions: a redrawn logo, pill-shaped filter chips, soft neutral palettes, real-time result counts, and a product page built around trust signals like verified reviews and clear return windows. The full 5-screen redesign is in the slider above, screen 4 is the rebuilt product page shown below for direct comparison.</p>
+    <span class="ba-label before">Before · 2022</span>
+    <img src="images/bb-before-pdp-2022.jpg" alt="Blush & Bones 2022 product page for Lord Ganesh earrings — bold condensed type, single review line" class="cs-img" style="max-width:520px">
+    <p class="cs-img-caption">Original product page — condensed display type, no size/material info, single-line review</p>
+
+    <div style="margin-top:36px">
+      <span class="ba-label after">After · Redesigned 2026</span>
+      <img src="images/bb-redesign-4-pdp.jpg" alt="Redesigned 2026 product page with finish options, ratings breakdown, and verified reviews" class="cs-img">
+      <p class="cs-img-caption">Redesigned concept — finish options, star ratings, savings badge, verified buyer reviews</p>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="case-nav">
+  <a href="cs-to-go-box.html"><div class="cn-label">Previous</div><div class="cn-title">← Reimagining the To-Go Box</div></a>
+  <a href="cs-icecream.html"><div class="cn-label">Next Case Study</div><div class="cn-title">Molly Moon's Brand Design →</div></a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-name">Nikhitha Reddy Kalakota</div><div class="footer-sub">PRODUCT DESIGNER · UX RESEARCHER</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script>
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+
+(function(){
+  var bbIndex = 0;
+  var bbScreens = ['Home','Results','Filters','Product','Cart'];
+  var bbTotal = bbScreens.length;
+
+  function bbRender(){
+    document.getElementById('bb-track').style.transform = 'translateX(-' + (bbIndex*100) + '%)';
+    document.getElementById('bb-stage').textContent = 'Screen ' + (bbIndex+1) + ' of ' + bbTotal + ' · ' + bbScreens[bbIndex];
+    var tabs = document.querySelectorAll('#bb-tabs .bb-screen-tab');
+    tabs.forEach(function(t,i){ t.classList.toggle('active', i===bbIndex); });
+    var dotsWrap = document.getElementById('bb-dots');
+    dotsWrap.innerHTML = '';
+    for(var i=0;i<bbTotal;i++){
+      var d = document.createElement('div');
+      d.className = 'bb-slider-dot';
+      d.style.background = (i===bbIndex) ? 'var(--crimson)' : 'var(--sand)';
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  window.bbSlide = function(dir){
+    bbIndex = (bbIndex + dir + bbTotal) % bbTotal;
+    bbRender();
+  };
+  window.bbGoTo = function(i){
+    bbIndex = i;
+    bbRender();
+  };
+
+  if(document.getElementById('bb-slider')) bbRender();
+})();
+</script>
+</body>
+</html>
