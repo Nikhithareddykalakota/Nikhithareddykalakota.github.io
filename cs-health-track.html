@@ -1,763 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Track. Case Study | Nikhitha Reddy Kalakota</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- ── PORTFOLIO SHARED STYLES ── -->
-<link rel="stylesheet" href="style.css">
-<style>
-/* ── ORIGINAL CASE STUDY STYLES (namespaced — don't override portfolio) ── */
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --teal: #1ABFAB;
-    --teal-light: #E0FAF7;
-    --navy: #0D2B45;
-    --coral: #FF6B6B;
-    --amber: #FFB347;
-    --lavender: #8B7CF6;
-    --mint: #52D9C8;
-    --soft-white: #F7FFFE;
-    --card-bg: #FFFFFF;
-    --text-dark: #0D2B45;
-    --text-mid: #4A6378;
-    --text-light: #8CA0B3;
-    --border: #E2EEF4;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--soft-white);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 60px;
-    background: rgba(247,255,254,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  /* nav style removed — using portfolio nav */
-  /* nav style removed — using portfolio nav */
-  /* nav style removed — using portfolio nav */
-  /* nav style removed — using portfolio nav */
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0D2B45 0%, #0A3D52 50%, #0D5068 100%);
-    display: flex; align-items: center; justify-content: center;
-    padding: 120px 60px 80px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(26,191,171,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute; bottom: -150px; left: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(139,124,246,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-content {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: center;
-    max-width: 1200px; width: 100%; position: relative; z-index: 2;
-  }
-  .hero-text { color: white; }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(26,191,171,0.2); border: 1px solid rgba(26,191,171,0.4);
-    color: var(--mint); padding: 6px 14px; border-radius: 20px;
-    font-size: 0.78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-  .hero-tag span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; }
-  .hero-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 800; line-height: 1.08;
-    margin-bottom: 20px;
-  }
-  .hero-title span { color: var(--teal); }
-  .hero-desc { font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.72); margin-bottom: 36px; }
-  .hero-meta { display: flex; gap: 32px; }
-  .hero-meta-item { }
-  .hero-meta-item .label { font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
-  .hero-meta-item .value { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.85); }
-
-  /* Phone mockup */
-  .phone-cluster {
-    position: relative;
-    display: flex; justify-content: center; align-items: flex-end;
-    height: 580px;
-  }
-  .phone {
-    position: absolute;
-    width: 220px; height: 450px;
-    background: #0A0F1A;
-    border-radius: 36px;
-    border: 2px solid rgba(255,255,255,0.12);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
-    overflow: hidden;
-    display: flex; flex-direction: column;
-  }
-  .phone-notch {
-    width: 80px; height: 22px;
-    background: #0A0F1A;
-    border-radius: 0 0 16px 16px;
-    margin: 0 auto;
-    position: relative; z-index: 2;
-  }
-  .phone-main {
-    bottom: 0; left: 50%; transform: translateX(-50%);
-    z-index: 3;
-    width: 240px; height: 490px;
-  }
-  .phone-left {
-    bottom: 30px; left: 0;
-    transform: rotate(-8deg);
-    z-index: 1;
-    opacity: 0.7;
-    width: 200px; height: 410px;
-  }
-  .phone-right {
-    bottom: 30px; right: 0;
-    transform: rotate(8deg);
-    z-index: 1;
-    opacity: 0.7;
-    width: 200px; height: 410px;
-  }
-  .phone-screen {
-    flex: 1; overflow: hidden;
-    background: linear-gradient(160deg, #0F2642 0%, #0A3D52 100%);
-    display: flex; flex-direction: column;
-    padding: 10px;
-    font-size: 7px;
-    color: white;
-  }
-  /* Home screen mockup */
-  .ps-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 6.5px; }
-  .ps-hello { font-size: 9px; font-weight: 700; color: white; margin-bottom: 2px; }
-  .ps-sub { font-size: 6px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-  .ps-search {
-    background: rgba(255,255,255,0.08); border-radius: 10px;
-    padding: 5px 8px; margin-bottom: 10px;
-    display: flex; align-items: center; gap: 4px;
-    font-size: 6px; color: rgba(255,255,255,0.4);
-  }
-  .ps-section-title { font-size: 7px; font-weight: 600; margin-bottom: 6px; }
-  .ps-icons { display: flex; gap: 5px; margin-bottom: 10px; }
-  .ps-icon {
-    width: 32px; height: 32px; border-radius: 10px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 2px; font-size: 13px;
-  }
-  .ps-icon span { font-size: 4.5px; }
-  .ps-icon.teal { background: rgba(26,191,171,0.25); }
-  .ps-icon.coral { background: rgba(255,107,107,0.25); }
-  .ps-icon.amber { background: rgba(255,179,71,0.25); }
-  .ps-icon.lav { background: rgba(139,124,246,0.25); }
-  .ps-card {
-    background: linear-gradient(135deg, #1ABFAB, #0D8A7F);
-    border-radius: 12px; padding: 8px;
-    margin-bottom: 8px; font-size: 6px;
-  }
-  .ps-card-title { font-size: 8px; font-weight: 700; margin-bottom: 2px; }
-  .ps-card-sub { font-size: 5.5px; opacity: 0.8; }
-  .ps-appt {
-    background: rgba(255,255,255,0.06); border-radius: 10px;
-    padding: 6px 8px; margin-bottom: 6px;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .ps-appt-date {
-    background: var(--teal); border-radius: 6px;
-    width: 24px; height: 24px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-size: 7px; font-weight: 700; flex-shrink: 0;
-  }
-  .ps-appt-info { flex: 1; }
-  .ps-appt-name { font-size: 6.5px; font-weight: 600; }
-  .ps-appt-spec { font-size: 5.5px; opacity: 0.6; }
-  .ps-nav {
-    display: flex; justify-content: space-around;
-    padding: 6px 0 2px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    font-size: 12px;
-  }
-
-  /* ── SECTIONS ── */
-  section { padding: 100px 60px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    display: inline-block;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 14px;
-  }
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 800; line-height: 1.15;
-    color: var(--navy); margin-bottom: 16px;
-  }
-  .section-desc { font-size: 1rem; line-height: 1.8; color: var(--text-mid); max-width: 700px; }
-
-  /* ── OVERVIEW ── */
-  .overview { background: white; }
-  .overview-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; }
-  .overview-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-  .stat-card {
-    background: var(--soft-white); border-radius: 16px;
-    padding: 24px; border-left: 4px solid var(--teal);
-  }
-  .stat-card.coral { border-color: var(--coral); }
-  .stat-card.amber { border-color: var(--amber); }
-  .stat-card.lav { border-color: var(--lavender); }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy); }
-  .stat-label { font-size: 0.82rem; color: var(--text-mid); margin-top: 2px; }
-  .problem-card {
-    background: linear-gradient(135deg, var(--navy), #1B4F6A);
-    border-radius: 24px; padding: 40px;
-    color: white;
-  }
-  .problem-card h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
-  .problem-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6;
-    color: rgba(255,255,255,0.82);
-  }
-  .problem-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 6px; }
-
-  /* ── PROCESS STRIP ── */
-  .process-strip {
-    background: var(--navy);
-    padding: 60px;
-  }
-  .process-steps { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
-  .process-step {
-    display: flex; flex-direction: column; align-items: center;
-    text-align: center; padding: 24px 28px;
-    position: relative;
-  }
-  .process-step::after {
-    content: '→';
-    position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
-    color: rgba(255,255,255,0.25); font-size: 1.2rem;
-  }
-  .process-step:last-child::after { display: none; }
-  .step-num {
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 2px solid var(--teal);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-weight: 800; color: var(--teal);
-    font-size: 1rem; margin-bottom: 10px;
-  }
-  .step-name { font-size: 0.8rem; font-weight: 600; color: white; margin-bottom: 4px; }
-  .step-sub { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
-
-  /* ── RESEARCH ── */
-  .research { background: var(--soft-white); }
-  .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-  .insight-card {
-    background: white; border-radius: 20px; padding: 28px;
-    border-top: 4px solid transparent; transition: transform .25s, box-shadow .25s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
-  .insight-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-  .insight-card.c1 { border-color: var(--teal); }
-  .insight-card.c2 { border-color: var(--coral); }
-  .insight-card.c3 { border-color: var(--amber); }
-  .insight-card.c4 { border-color: var(--lavender); }
-  .insight-card.c5 { border-color: var(--mint); }
-  .insight-card.c6 { border-color: #FF9F7F; }
-  .insight-icon { font-size: 2rem; margin-bottom: 12px; }
-  .insight-card h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-  .insight-card p { font-size: 0.84rem; line-height: 1.65; color: var(--text-mid); }
-
-  /* ── PERSONA ── */
-  .persona-section { background: white; }
-  .persona-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
-  .persona-card {
-    border-radius: 24px; overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  }
-  .persona-header {
-    padding: 32px 32px 24px;
-    background: linear-gradient(135deg, #1ABFAB, #0D8A7F);
-    color: white; display: flex; align-items: center; gap: 20px;
-  }
-  .persona-avatar {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem; flex-shrink: 0;
-    border: 2px solid rgba(255,255,255,0.4);
-  }
-  .persona-header.p2 { background: linear-gradient(135deg, #8B7CF6, #5E4DB8); }
-  .persona-header.p3 { background: linear-gradient(135deg, #FF6B6B, #C84B4B); }
-  .persona-name { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 2px; }
-  .persona-role { font-size: 0.8rem; opacity: 0.82; }
-  .persona-body { padding: 28px 32px; background: white; }
-  .persona-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-  .persona-tag {
-    font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-    background: var(--teal-light); color: var(--teal);
-  }
-  .persona-row { margin-bottom: 16px; }
-  .persona-row-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-light); margin-bottom: 6px; }
-  .persona-row ul { padding-left: 16px; }
-  .persona-row ul li { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; }
-  .persona-quote {
-    background: var(--soft-white); border-left: 3px solid var(--teal);
-    padding: 12px 16px; border-radius: 0 10px 10px 0;
-    font-size: 0.84rem; font-style: italic; color: var(--text-mid);
-    margin-top: 16px;
-  }
-
-  /* ── JOURNEY MAP ── */
-  .journey { background: linear-gradient(160deg, #F0FFFE 0%, #FFF8F0 100%); }
-  .journey-map { margin-top: 56px; overflow-x: auto; }
-  .jm-table { width: 100%; min-width: 900px; border-collapse: separate; border-spacing: 0 12px; }
-  .jm-row-label {
-    font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--text-light); padding: 14px 20px; white-space: nowrap;
-    background: white; border-radius: 12px 0 0 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    width: 120px;
-  }
-  .jm-cell {
-    padding: 14px 16px; font-size: 0.82rem; color: var(--text-dark); line-height: 1.5;
-    background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center; vertical-align: top;
-  }
-  .jm-cell:last-child { border-radius: 0 12px 12px 0; }
-  .jm-header th {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    color: white; background: var(--navy); padding: 14px 16px; text-align: center;
-  }
-  .jm-header th:first-child { border-radius: 12px 0 0 12px; }
-  .jm-header th:last-child { border-radius: 0 12px 12px 0; }
-  .emotion-high { color: #1ABFAB; font-weight: 700; font-size: 1.2rem; }
-  .emotion-mid { color: var(--amber); font-weight: 700; font-size: 1.2rem; }
-  .emotion-low { color: var(--coral); font-weight: 700; font-size: 1.2rem; }
-  .stage-pill {
-    display: inline-block; padding: 4px 12px; border-radius: 20px;
-    font-size: 0.7rem; font-weight: 700; margin-bottom: 6px;
-  }
-  .stage-1 { background: #E0FAF7; color: var(--teal); }
-  .stage-2 { background: #FFF0E0; color: var(--amber); }
-  .stage-3 { background: #F0EEFF; color: var(--lavender); }
-  .stage-4 { background: #FFE8E8; color: var(--coral); }
-  .stage-5 { background: #E8F8FF; color: #2196F3; }
-
-  /* ── LOFI WIREFRAMES ── */
-  .lofi { background: #FFFDF9; }
-  .lofi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
-  .lofi-frame {
-    background: white; border-radius: 16px;
-    border: 2px dashed #D4E4EF;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
-  .lofi-label {
-    background: #F4F8FB; padding: 10px 14px;
-    font-size: 0.72rem; font-weight: 700; color: var(--text-mid);
-    border-bottom: 1px solid #E2EEF4; text-align: center;
-  }
-  .lofi-sketch { padding: 12px; min-height: 220px; }
-  /* SVG wireframe sketches */
-  .lofi-sketch svg { width: 100%; height: auto; }
-
-  /* ── HIGH FI ── */
-  .hifi { background: var(--navy); padding: 100px 60px; }
-  .hifi .section-title { color: white; }
-  .hifi .section-label { color: var(--teal); }
-  .hifi .section-desc { color: rgba(255,255,255,0.6); }
-  .screens-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 56px; }
-  .screen-card {
-    background: #0A0F1A; border-radius: 28px;
-    border: 1px solid rgba(255,255,255,0.08);
-    overflow: hidden; transition: transform .3s;
-  }
-  .screen-card:hover { transform: translateY(-8px); }
-  .screen-notch {
-    width: 60%; height: 18px; background: #0A0F1A;
-    border-radius: 0 0 12px 12px; margin: 0 auto;
-    position: relative; z-index: 1;
-  }
-  .screen-content { padding: 10px 10px 14px; font-size: 6.5px; color: white; min-height: 280px; }
-  .screen-label { text-align: center; font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.5); padding: 12px 0 8px; }
-
-  /* Individual screen contents */
-  .sc-title { font-size: 9px; font-weight: 700; margin-bottom: 8px; }
-  .sc-sub { font-size: 5.5px; opacity: 0.5; margin-bottom: 6px; }
-  .sc-bar {
-    background: rgba(255,255,255,0.06); border-radius: 8px;
-    padding: 5px 7px; margin-bottom: 5px; font-size: 6px;
-    display: flex; align-items: center; gap: 5px;
-  }
-  .sc-bar-icon { font-size: 10px; }
-  .sc-metric {
-    background: rgba(26,191,171,0.15); border-radius: 10px;
-    padding: 8px; margin-bottom: 5px; text-align: center;
-  }
-  .sc-metric-val { font-size: 14px; font-weight: 700; color: var(--teal); }
-  .sc-metric-label { font-size: 5px; opacity: 0.6; }
-  .sc-chart { display: flex; align-items: flex-end; gap: 3px; height: 40px; margin-bottom: 8px; padding: 0 4px; }
-  .sc-bar-col {
-    flex: 1; border-radius: 3px 3px 0 0;
-    background: rgba(26,191,171,0.35);
-  }
-  .sc-bar-col.hi { background: var(--teal); }
-  .sc-file {
-    background: rgba(255,255,255,0.05); border-radius: 8px;
-    padding: 6px 8px; margin-bottom: 4px;
-    display: flex; align-items: center; gap: 6px; font-size: 6px;
-  }
-  .sc-file-icon {
-    width: 20px; height: 20px; border-radius: 6px;
-    background: rgba(26,191,171,0.25);
-    display: flex; align-items: center; justify-content: center; font-size: 10px;
-    flex-shrink: 0;
-  }
-  .sc-appt {
-    background: rgba(255,255,255,0.05); border-radius: 8px;
-    padding: 7px 8px; margin-bottom: 4px;
-    display: flex; align-items: center; gap: 6px; font-size: 6px;
-  }
-  .sc-appt-d {
-    background: var(--teal); border-radius: 5px;
-    width: 20px; height: 20px; flex-shrink: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-size: 5.5px; font-weight: 700;
-  }
-  .sc-nav-row {
-    display: flex; justify-content: space-around;
-    padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 11px;
-  }
-  .sc-onboard {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    min-height: 200px; text-align: center; padding: 10px;
-  }
-  .sc-onboard-ill { font-size: 40px; margin-bottom: 8px; }
-  .sc-onboard-title { font-size: 9px; font-weight: 700; margin-bottom: 4px; }
-  .sc-onboard-sub { font-size: 5.5px; opacity: 0.5; margin-bottom: 10px; }
-  .sc-btn { background: var(--teal); border-radius: 8px; padding: 6px 16px; font-size: 6.5px; font-weight: 700; display: inline-block; color: white; }
-  .sc-login-input {
-    background: rgba(255,255,255,0.07); border-radius: 7px;
-    padding: 6px 8px; margin-bottom: 5px; font-size: 6px; color: rgba(255,255,255,0.4);
-    display: flex; align-items: center;
-  }
-  .sc-social-row { display: flex; gap: 4px; margin-top: 6px; justify-content: center; }
-  .sc-social-btn {
-    background: rgba(255,255,255,0.08); border-radius: 5px;
-    padding: 4px 8px; font-size: 9px;
-  }
-  .sc-toggle-row { display: flex; gap: 4px; margin-bottom: 8px; }
-  .sc-toggle {
-    flex: 1; text-align: center; padding: 4px; border-radius: 6px;
-    font-size: 5.5px; background: rgba(255,255,255,0.06);
-  }
-  .sc-toggle.active { background: var(--teal); }
-  .sc-profile-pic {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--teal); margin: 6px auto;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-  }
-  .sc-notification {
-    background: rgba(255,255,255,0.05); border-radius: 8px;
-    padding: 6px 8px; margin-bottom: 4px;
-    display: flex; gap: 6px; font-size: 6px;
-  }
-  .sc-notif-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 2px; }
-  .sc-notif-dot.red { background: var(--coral); }
-  .sc-notif-dot.amber { background: var(--amber); }
-  .sc-diet { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 6px; }
-  .sc-diet-card { background: rgba(255,255,255,0.05); border-radius: 7px; padding: 6px; text-align: center; }
-  .sc-diet-icon { font-size: 12px; margin-bottom: 2px; }
-  .sc-diet-label { font-size: 5px; opacity: 0.7; }
-  .sc-diet-val { font-size: 7px; font-weight: 700; color: var(--teal); }
-
-  /* ── SOLUTIONS ── */
-  .solutions { background: white; }
-  .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
-  .solution-card {
-    border-radius: 20px; padding: 32px;
-    background: var(--soft-white); position: relative; overflow: hidden;
-    transition: transform .25s; cursor: default;
-  }
-  .solution-card:hover { transform: translateY(-4px); }
-  .solution-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  }
-  .solution-card.s1::before { background: var(--teal); }
-  .solution-card.s2::before { background: var(--lavender); }
-  .solution-card.s3::before { background: var(--coral); }
-  .solution-card.s4::before { background: var(--amber); }
-  .solution-card.s5::before { background: var(--mint); }
-  .solution-card.s6::before { background: #FF9F7F; }
-  .solution-icon { font-size: 2.4rem; margin-bottom: 16px; }
-  .solution-card h4 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-  .solution-card p { font-size: 0.84rem; line-height: 1.7; color: var(--text-mid); }
-
-  /* ── REFLECTION ── */
-  .reflection {
-    background: linear-gradient(135deg, var(--navy), #1B4F6A);
-    padding: 100px 60px; color: white;
-  }
-  .reflection .section-label { color: var(--teal); }
-  .reflection .section-title { color: white; }
-  .reflection-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; margin-top: 48px; }
-  .reflection-text p { font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
-  .takeaways { display: flex; flex-direction: column; gap: 16px; }
-  .takeaway {
-    background: rgba(255,255,255,0.06); border-radius: 16px;
-    padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start;
-  }
-  .takeaway-num {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--teal); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800; color: white;
-  }
-  .takeaway h5 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
-  .takeaway p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #8B1A1A; color: rgba(255,255,255,0.75);
-    text-align: center; padding: 40px 60px;
-    font-size: 0.82rem;
-  }
-  footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-
-  /* ── DIVIDER ── */
-  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-  @media (max-width: 900px) {
-    .journey > .container > div[style*="grid-template-columns:repeat(5"] {
-      grid-template-columns: 1fr 1fr !important;
-    }
-    nav { padding: 16px 24px; }
-    nav /* nav style removed — using portfolio nav */
-    section { padding: 60px 24px; }
-    .hero { padding: 100px 24px 60px; }
-    .hero-content, .overview-grid, .persona-cards, .reflection-grid { grid-template-columns: 1fr; gap: 40px; }
-    .phone-cluster { height: 320px; }
-    .phone-main { width: 160px; height: 330px; }
-    .phone-left, .phone-right { display: none; }
-    .insight-grid, .solutions-grid { grid-template-columns: 1fr 1fr; }
-    .screens-grid { grid-template-columns: repeat(3, 1fr); }
-    .lofi-grid { grid-template-columns: 1fr 1fr; }
-    .hifi { padding: 60px 24px; }
-  }
-
-    @media (max-width: 700px) {
-      div[style*='grid-template-columns:repeat(5,1fr)'] {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-    }
-
-
-/* ── INTEGRATION OVERRIDES ── */
-
-/* Portfolio nav takes full control */
-nav {
-  position: sticky !important; top: 0 !important;
-  background: rgba(250,218,221,0.96) !important;
-  backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid #E8E2D9 !important;
-  padding: 0 6vw !important; height: 64px !important;
-  z-index: 200 !important;
-}
-.hero { padding-top: 88px !important; }
-
-
-/* CTA section at bottom */
-.portfolio-cta-section {
-  background: white;
-  padding: 56px 60px;
-  border-top: 1px solid var(--border, #E2EEF4);
-}
-.portfolio-cta-inner {
-  max-width: 860px; margin: 0 auto;
-  display: flex; gap: 14px; flex-wrap: wrap;
-}
-
-/* Case nav */
-.portfolio-case-nav {
-  background: var(--soft-white, #F7FFFE);
-  padding: 32px 60px 48px;
-  border-top: 1px solid var(--border, #E2EEF4);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-  max-width: 100%;
-}
-.pcn-label {
-  font-size: 10px; color: var(--text-light, #8CA0B3);
-  letter-spacing: .12em; text-transform: uppercase; margin-bottom: 5px;
-}
-.pcn-title {
-  font-size: 15px; color: var(--text-dark, #0D2B45); font-weight: 500;
-}
-.pcn-link { text-decoration: none; }
-.pcn-link:hover .pcn-title { color: var(--teal, #1ABFAB); }
-
-/* Footer override — use portfolio footer */
-.portfolio-footer-wrap { display: block; }
-
-@media(max-width:720px){
-  .portfolio-cta-section { padding: 40px 24px; }
-  .portfolio-case-nav { padding: 28px 24px 40px; }
-}
-</style>
-
-<style>
-/* ══ FORCE PORTFOLIO NAV — overrides all case study nav styles ══ */
-nav {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 9999 !important;
-  background: rgba(250,218,221,0.96) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid #E8E2D9 !important;
-  padding: 0 6vw !important;
-  height: 64px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  font-family: "DM Sans", sans-serif !important;
-  color: #8B1A1A !important;
-  box-shadow: none !important;
-}
-nav * {
-  font-family: "DM Sans", sans-serif !important;
-}
-nav /* nav style removed — using portfolio nav */
-nav .nav-logo .logo-fallback {
-  width: 42px !important;
-  height: 42px !important;
-  border-radius: 50% !important;
-  background: #F0D0D8 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 20px !important;
-  color: #8B1A1A !important;
-  flex-shrink: 0 !important;
-}
-nav /* nav style removed — using portfolio nav */
-nav /* nav style removed — using portfolio nav */
-nav .nav-links a:hover,
-nav .nav-links a.active {
-  color: #8B1A1A !important;
-  font-weight: 600 !important;
-}
-nav .nav-mobile-btn {
-  display: none !important;
-  background: none !important;
-  border: none !important;
-  cursor: pointer !important;
-  color: #8B1A1A !important;
-  font-size: 22px !important;
-}
-@media(max-width:720px) {
-  nav /* nav style removed — using portfolio nav */
-  nav .nav-mobile-btn { display: block !important; }
-  nav .nav-links.open {
-    display: flex !important;
-    flex-direction: column !important;
-    position: absolute !important;
-    top: 64px !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: #FADADD !important;
-    padding: 20px 6vw 24px !important;
-    border-bottom: 1px solid #E8D0D4 !important;
-    z-index: 199 !important;
-    gap: 18px !important;
-  }
-}
-
-/* ══ NUCLEAR NAV OVERRIDE — must come last to win specificity ══ */
-nav,
-nav *,
-nav a,
-nav span,
-nav .nav-logo,
-nav .nav-logo span,
-nav .nav-links,
-nav .nav-links a,
-nav .nav-links a:hover,
-nav .nav-mobile-btn {
-  font-family: 'DM Sans', sans-serif !important;
-  color: #8B1A1A !important;
-  font-weight: 500 !important;
-  background: transparent !important;
-  text-shadow: none !important;
-  letter-spacing: 0.02em !important;
-}
-nav {
-  background: rgba(250,218,221,0.96) !important;
-  border-bottom: 1px solid #E8E2D9 !important;
-}
-nav .nav-logo span {
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  color: #8B1A1A !important;
-}
-nav .logo-fallback {
-  background: #F0D0D8 !important;
-  color: #8B1A1A !important;
-  border-radius: 50% !important;
-}
-nav .nav-links a.active::after {
-  background: #8B1A1A !important;
-}
-
-/* ══ FINAL NAV OVERRIDE — appended last, highest specificity ══ */
-nav { background: rgba(250,218,221,0.96) !important; border-bottom: 1px solid #E8E2D9 !important; }
-nav .nav-logo span { font-family: 'DM Sans', sans-serif !important; color: #8B1A1A !important; font-size: 15px !important; font-weight: 600 !important; }
-nav .nav-links a,
-nav .nav-links a:link,
-nav .nav-links a:hover,
-nav .nav-links a:visited,
-nav .nav-links a:active,
-nav .nav-links a.active { font-family: 'DM Sans', sans-serif !important; color: #8B1A1A !important; font-size: 14px !important; font-weight: 500 !important; text-decoration: none !important; }
-nav .logo-fallback { background: #F0D0D8 !important; }
-nav .nav-mobile-btn { color: #8B1A1A !important; }
-
-/* ══ FOOTER — maroon background ══ */
-footer { background: #8B1A1A !important; }
-footer, footer * { color: rgba(255,255,255,0.8) !important; }
-footer a { color: rgba(255,255,255,0.9) !important; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Health Track Case Study: A centralized health data platform that unifies fragmented medical records, delivers personalized insights, and empowers users to take control of their wellbeing.">
+  <meta property="og:title" content="Health Track Case Study | Nikhitha Reddy Kalakota">
+  <meta property="og:description" content="Exploring the design of a health management platform that solves fragmented medical records for patients worldwide.">
+  <meta property="og:image" content="https://nikhithareddykalakota.github.io/images/healthtrack-og.png">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Health Track Case Study | Nikhitha Reddy Kalakota</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/cs-health-track.css">
 </head>
 <body>
 
-<!-- ══ PORTFOLIO NAV ══ -->
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION (Portfolio Shared)
+     ═════════════════════════════════════════════════════════ -->
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="logo-fallback">👩🏻</div>
@@ -770,1038 +35,600 @@ footer a { color: rgba(255,255,255,0.9) !important; }
     <a href="resume.html">Resume</a>
     <a href="contact.html">Contact Me</a>
   </div>
-  <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+  <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation menu">☰</button>
 </nav>
 
+<!-- ══════════════════════════════════════════════════════════
+     MAIN CONTENT
+     ═════════════════════════════════════════════════════════ -->
+<main>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <a href="work.html" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(82,217,200,0.8);text-decoration:none;margin-bottom:20px;">← Back to Work</a>
-      <div class="hero-tag"><span></span>UX Strategy · Product Design</div>
-      <h1 class="hero-title">Health<span>Track</span><br>Your health,<br>one place.</h1>
-      <p class="hero-desc">A centralized health data platform that unifies fragmented medical records, delivers personalized insights, and empowers users to take control of their wellbeing, regardless of where they've been treated.</p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <div class="label">Role</div>
-          <div class="value">Solo UX Designer</div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <article class="hero-text">
+        <a href="work.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(82,217,200,0.8); text-decoration: none; margin-bottom: 16px;">
+          ← BACK TO WORK
+        </a>
+        <div class="hero-tag">
+          <span aria-hidden="true"></span>
+          UX Strategy · Product Design
         </div>
-        <div class="hero-meta-item">
-          <div class="label">Platform</div>
-          <div class="value">iOS Mobile App</div>
+        <h1 class="hero-title">Health<span>Track</span><br>Your health,<br>one place.</h1>
+        <p class="hero-desc">A centralized health data platform that unifies fragmented medical records, delivers personalized insights, and empowers users to take control of their wellbeing, regardless of their location or healthcare system.</p>
+        
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="label">Role</div>
+            <div class="value">Solo UX Designer</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Platform</div>
+            <div class="value">iOS Mobile App</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Timeline</div>
+            <div class="value">1 Semester</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Tools</div>
+            <div class="value">Figma · Pen & Paper</div>
+          </div>
         </div>
-        <div class="hero-meta-item">
-          <div class="label">Timeline</div>
-          <div class="value">1 Semester</div>
+      </article>
+
+      <!-- Phone Mockup Cluster -->
+      <figure class="phone-cluster" aria-label="Health Track app interface mockups showing home, reports, and profile screens">
+        <!-- Left phone (reports) -->
+        <div class="phone phone-left" role="img" aria-label="Reports screen showing 96 bpm heart rate with chart and medical files">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="sc-title">Reports</div>
+            <div class="sc-metric">
+              <div class="sc-metric-val">96</div>
+              <div class="sc-metric-label">bpm Heart Rate</div>
+            </div>
+            <div class="sc-chart">
+              <div class="sc-bar-col" style="height: 55%"></div>
+              <div class="sc-bar-col" style="height: 70%"></div>
+              <div class="sc-bar-col hi" style="height: 85%"></div>
+              <div class="sc-bar-col" style="height: 60%"></div>
+              <div class="sc-bar-col" style="height: 75%"></div>
+              <div class="sc-bar-col" style="height: 65%"></div>
+              <div class="sc-bar-col hi" style="height: 90%"></div>
+            </div>
+            <div class="sc-file">
+              <div class="sc-file-icon">📄</div>
+              <div>
+                <div style="font-weight: 600">General Health</div>
+                <div style="opacity: 0.5">5 files</div>
+              </div>
+            </div>
+            <div class="sc-file">
+              <div class="sc-file-icon">🩺</div>
+              <div>
+                <div style="font-weight: 600">Blood Pressure</div>
+                <div style="opacity: 0.5">3 files</div>
+              </div>
+            </div>
+            <div class="sc-nav-row">🏠 📅 📋 🔔</div>
+          </div>
         </div>
-        <div class="hero-meta-item">
-          <div class="label">Tools</div>
-          <div class="value">Figma · Pen & Paper</div>
+
+        <!-- Center phone (home/dashboard) -->
+        <div class="phone phone-main" role="img" aria-label="Home screen showing personalized greeting, services, and upcoming appointments">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ps-header">
+              <div>
+                <div class="ps-hello">Hello, Nikhitha 👋</div>
+                <div class="ps-sub">Monday, June 8</div>
+              </div>
+              <div style="font-size: 18px" aria-hidden="true">🔔</div>
+            </div>
+            <div class="ps-search">🔍 Search medical records…</div>
+            <div class="ps-section-title">Services</div>
+            <div class="ps-icons">
+              <button class="ps-icon teal" aria-label="Schedule appointments">🗓️<span>Schedule</span></button>
+              <button class="ps-icon coral" aria-label="View medical records">📋<span>Records</span></button>
+              <button class="ps-icon amber" aria-label="Manage medications">💊<span>Meds</span></button>
+              <button class="ps-icon lav" aria-label="View health reports">📊<span>Reports</span></button>
+            </div>
+            <article class="ps-card">
+              <div class="ps-card-title">Get Best Medical Services</div>
+              <div class="ps-card-sub">Top-rated doctors near you</div>
+            </article>
+            <div class="ps-section-title">Upcoming Appointments</div>
+            <div class="ps-appt">
+              <div class="ps-appt-date">30<br>APR</div>
+              <div class="ps-appt-info">
+                <div class="ps-appt-name">Dr. Sarah Chen</div>
+                <div class="ps-appt-spec">Cardiologist · 3:00pm</div>
+              </div>
+            </div>
+            <div class="ps-appt">
+              <div class="ps-appt-date" style="background: #8B7CF6">12<br>MAY</div>
+              <div class="ps-appt-info">
+                <div class="ps-appt-name">Dr. Mooni Shane</div>
+                <div class="ps-appt-spec">Pulmonologist · 11:00am</div>
+              </div>
+            </div>
+            <div class="ps-nav">🏠 📅 📋 👤</div>
+          </div>
+        </div>
+
+        <!-- Right phone (profile) -->
+        <div class="phone phone-right" role="img" aria-label="Profile screen with user settings and options">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div style="text-align: center; padding: 8px 0 4px;">
+              <div style="font-size: 26px" aria-hidden="true">👤</div>
+              <div style="font-size: 8px; font-weight: 700; margin-bottom: 2px">Nikhitha Reddy</div>
+              <div style="font-size: 5.5px; opacity: 0.5; margin-bottom: 8px">+1 480 871 5993</div>
+            </div>
+            <button class="sc-bar">👤 Edit Profile</button>
+            <button class="sc-bar">🔔 Notifications</button>
+            <button class="sc-bar">📊 Dashboard</button>
+            <button class="sc-bar">🗂️ Medical Records</button>
+            <button class="sc-bar">🔒 Security</button>
+            <button class="sc-bar">🌙 Dark Mode</button>
+            <button class="sc-bar" style="color: #FF6B6B">← Logout</button>
+            <div class="sc-nav-row">🏠 📅 📋 👤</div>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROCESS STRIP -->
+  <div class="process-strip">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <span class="section-label">Design Process</span>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-name">Strategy</div>
+          <div class="step-sub">Problem definition</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-name">Research</div>
+          <div class="step-sub">User interviews & surveys</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-name">Define</div>
+          <div class="step-sub">Personas & journey maps</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-name">Structure</div>
+          <div class="step-sub">IA & user flows</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <div class="step-name">Skeleton</div>
+          <div class="step-sub">Lo-fi wireframes</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">6</div>
+          <div class="step-name">Surface</div>
+          <div class="step-sub">Hi-fi prototypes</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Phone cluster -->
-    <div class="phone-cluster">
-      <!-- Left phone -->
-      <div class="phone phone-left">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="sc-title">Reports</div>
-          <div class="sc-metric"><div class="sc-metric-val">96</div><div class="sc-metric-label">bpm Heart Rate</div></div>
-          <div class="sc-chart">
-            <div class="sc-bar-col" style="height:55%"></div>
-            <div class="sc-bar-col" style="height:70%"></div>
-            <div class="sc-bar-col hi" style="height:85%"></div>
-            <div class="sc-bar-col" style="height:60%"></div>
-            <div class="sc-bar-col" style="height:75%"></div>
-            <div class="sc-bar-col" style="height:65%"></div>
-            <div class="sc-bar-col hi" style="height:90%"></div>
+  <!-- OVERVIEW SECTION -->
+  <section class="overview" id="overview">
+    <div class="container">
+      <div class="overview-grid">
+        <article>
+          <span class="section-label">Overview</span>
+          <h2 class="section-title">Health data is broken.<br>We're here to fix it.</h2>
+          <p class="section-desc">The idea for Health Track was sparked by a real experience: a friend struggling to gather her medical records from India to share with doctors in the US. Unlike in centralized healthcare systems, patients navigating international or multi-provider care face a fragmented nightmare of paper files, scattered PDFs, and disconnected digital portals.</p>
+          <p class="section-desc" style="margin-top: 16px">Health Track was designed to solve this: a single, secure platform where users can aggregate records from any provider, anywhere in the world, with intelligent insights that travel with them.</p>
+          
+          <div class="overview-stats">
+            <article class="stat-card">
+              <div class="stat-num">80%</div>
+              <div class="stat-label">of patients struggle to access their own records across providers</div>
+            </article>
+            <article class="stat-card coral">
+              <div class="stat-num">3.4x</div>
+              <div class="stat-label">more medical errors occur due to incomplete health history</div>
+            </article>
+            <article class="stat-card amber">
+              <div class="stat-num">5+</div>
+              <div class="stat-label">apps the average person uses to manage different health aspects</div>
+            </article>
+            <article class="stat-card lav">
+              <div class="stat-num">1 in 3</div>
+              <div class="stat-label">international patients lack digitized records from their home country</div>
+            </article>
           </div>
-          <div class="sc-file"><div class="sc-file-icon">📄</div><div><div style="font-weight:600">General Health</div><div style="opacity:.5">5 files</div></div></div>
-          <div class="sc-file"><div class="sc-file-icon">🩺</div><div><div style="font-weight:600">Blood Pressure</div><div style="opacity:.5">3 files</div></div></div>
-          <div class="sc-nav-row">🏠 📅 📋 🔔</div>
-        </div>
-      </div>
+        </article>
 
-      <!-- Main center phone -->
-      <div class="phone phone-main">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="ps-header">
+        <article class="problem-card">
+          <h3>🎯 The Core Problem</h3>
+          <div class="problem-item">
+            <div class="problem-dot"></div>
+            <span>Health records are siloed across multiple hospitals, apps, and paper files with no unified view</span>
+          </div>
+          <div class="problem-item">
+            <div class="problem-dot"></div>
+            <span>International patients face critical gaps when moving between healthcare systems in different countries</span>
+          </div>
+          <div class="problem-item">
+            <div class="problem-dot"></div>
+            <span>Existing apps offer generic, one-size-fits-all recommendations that don't account for individual health context</span>
+          </div>
+          <div class="problem-item">
+            <div class="problem-dot"></div>
+            <span>Patients have no ownership or control over their own health data</span>
+          </div>
+          <div class="problem-item">
+            <div class="problem-dot"></div>
+            <span>Scheduling, records, reminders, and insights require multiple apps, creating friction and drop-off</span>
+          </div>
+          <div style="margin-top: 24px; background: rgba(26,191,171,0.15); border-radius: 12px; padding: 16px;">
+            <div style="font-size: 0.78rem; color: var(--ht-teal); font-weight: 700; margin-bottom: 6px;">DESIGN GOAL</div>
+            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6">Build a single health companion that centralizes records, delivers personalized guidance, and travels with users across borders and healthcare systems.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH SECTION -->
+  <section class="research" id="research">
+    <div class="container">
+      <span class="section-label">Research & Insights</span>
+      <h2 class="section-title">Listening before designing</h2>
+      <p class="section-desc">Interviews and surveys with users across varying healthcare backgrounds, including international students, chronic condition patients, and healthcare professionals, revealed five critical insights that shaped the design.</p>
+      
+      <div class="insight-grid">
+        <article class="insight-card c1">
+          <div class="insight-icon">🗂️</div>
+          <h4>Fragmented Records</h4>
+          <p>Users juggle paper reports, email attachments, hospital portals, and pharmacy records with no single place to see their complete health picture.</p>
+        </article>
+        <article class="insight-card c2">
+          <div class="insight-icon">🌍</div>
+          <h4>Cross-Border Gaps</h4>
+          <p>International users, especially students, arrive with no digital records. Hospitals in many regions don't provide portable or digitized patient data.</p>
+        </article>
+        <article class="insight-card c3">
+          <div class="insight-icon">💡</div>
+          <h4>Generic Advice Fails</h4>
+          <p>Generic health apps offer the same advice to everyone. Users want insights tailored to their actual labs, vitals, and medical history.</p>
+        </article>
+        <article class="insight-card c4">
+          <div class="insight-icon">⏰</div>
+          <h4>Time is Precious</h4>
+          <p>Users don't have time to manually organize data. They need automation that respects their privacy and preferences.</p>
+        </article>
+        <article class="insight-card c5">
+          <div class="insight-icon">🔐</div>
+          <h4>Privacy is Non-Negotiable</h4>
+          <p>Users are cautious about health data. Transparency, encryption, and user control are critical trust drivers.</p>
+        </article>
+        <article class="insight-card c6">
+          <div class="insight-icon">📱</div>
+          <h4>Mobile-First is Essential</h4>
+          <p>Medical records access happens on the go. A responsive, offline-capable mobile app was the only way to meet user needs.</p>
+        </article>
+      </div>
+    </section>
+
+  <!-- PERSONA SECTION -->
+  <section class="persona-section" id="personas">
+    <div class="container">
+      <span class="section-label">User Personas</span>
+      <h2 class="section-title">Meet the users</h2>
+      
+      <div class="persona-cards">
+        <article class="persona-card">
+          <header class="persona-header">
+            <div class="persona-avatar">🧑‍💻</div>
             <div>
-              <div class="ps-hello">Hello, Nikhitha 👋</div>
-              <div class="ps-sub">Monday, June 8</div>
+              <h3 class="persona-name">Priya, the International Student</h3>
+              <p class="persona-role">Age 24, Managing health across continents</p>
             </div>
-            <div style="font-size:18px">🔔</div>
-          </div>
-          <div class="ps-search">🔍 Search medical records…</div>
-          <div class="ps-section-title">Services</div>
-          <div class="ps-icons">
-            <div class="ps-icon teal">🗓️<span>Schedule</span></div>
-            <div class="ps-icon coral">📋<span>Records</span></div>
-            <div class="ps-icon amber">💊<span>Meds</span></div>
-            <div class="ps-icon lav">📊<span>Reports</span></div>
-          </div>
-          <div class="ps-card">
-            <div class="ps-card-title">Get Best Medical Services</div>
-            <div class="ps-card-sub">Top-rated doctors near you</div>
-          </div>
-          <div class="ps-section-title">Upcoming Appointments</div>
-          <div class="ps-appt">
-            <div class="ps-appt-date">30<br>APR</div>
-            <div class="ps-appt-info">
-              <div class="ps-appt-name">Dr. Sarah Chen</div>
-              <div class="ps-appt-spec">Cardiologist · 3:00pm</div>
+          </header>
+          <div class="persona-body">
+            <div class="persona-tags">
+              <span class="persona-tag">Tech-savvy</span>
+              <span class="persona-tag">Privacy-conscious</span>
+              <span class="persona-tag">Goal-oriented</span>
             </div>
-          </div>
-          <div class="ps-appt">
-            <div class="ps-appt-date" style="background:#8B7CF6">12<br>MAY</div>
-            <div class="ps-appt-info">
-              <div class="ps-appt-name">Dr. Mooni Shane</div>
-              <div class="ps-appt-spec">Pulmonologist · 11:00am</div>
+            <div class="persona-row">
+              <div class="persona-row-label">Goals</div>
+              <ul>
+                <li>Access medical history from India without repeated tests</li>
+                <li>Quickly share verified records with new US doctors</li>
+                <li>Maintain confidence in her health data security</li>
+              </ul>
             </div>
-          </div>
-          <div class="ps-nav">🏠 📅 📋 👤</div>
-        </div>
-      </div>
-
-      <!-- Right phone -->
-      <div class="phone phone-right">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div style="text-align:center; padding: 8px 0 4px;">
-            <div style="font-size:26px">👤</div>
-            <div style="font-size:8px; font-weight:700; margin-bottom:2px">Nikhitha Reddy</div>
-            <div style="font-size:5.5px; opacity:.5; margin-bottom:8px">+1 480 871 5993</div>
-          </div>
-          <div class="sc-bar">👤 Edit Profile</div>
-          <div class="sc-bar">🔔 Notifications</div>
-          <div class="sc-bar">📊 Dashboard</div>
-          <div class="sc-bar">🗂️ Medical Records</div>
-          <div class="sc-bar">🔒 Security</div>
-          <div class="sc-bar">🌙 Dark Mode</div>
-          <div class="sc-bar" style="color:#FF6B6B">← Logout</div>
-          <div class="sc-nav-row">🏠 📅 📋 👤</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS STRIP -->
-<div class="process-strip">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:32px;">
-      <span class="section-label">Design Process</span>
-    </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <div class="step-name">Strategy</div>
-        <div class="step-sub">Problem definition</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <div class="step-name">Research</div>
-        <div class="step-sub">User interviews & surveys</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <div class="step-name">Define</div>
-        <div class="step-sub">Personas & journey maps</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <div class="step-name">Structure</div>
-        <div class="step-sub">IA & user flows</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">5</div>
-        <div class="step-name">Skeleton</div>
-        <div class="step-sub">Lo-fi wireframes</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">6</div>
-        <div class="step-name">Surface</div>
-        <div class="step-sub">Hi-fi prototypes</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- OVERVIEW -->
-<section class="overview" id="overview">
-  <div class="container">
-    <div class="overview-grid">
-      <div>
-        <span class="section-label">Overview</span>
-        <h2 class="section-title">Health data is broken.<br>We're here to fix it.</h2>
-        <p class="section-desc">The idea for Health Track was sparked by a real experience, a friend struggling to gather her medical records from India to share with doctors in the US. Unlike in the US, India lacks digitized patient-held records, and hospitals often retain reports covered by insurance. This left patients with no accessible health history.</p>
-        <p class="section-desc" style="margin-top:16px">Health Track was designed to solve this: a single, secure platform where users can aggregate records from any provider, anywhere in the world, with personalized insights layered on top.</p>
-        <div class="overview-stats">
-          <div class="stat-card">
-            <div class="stat-num">80%</div>
-            <div class="stat-label">of patients struggle to access their own records across providers</div>
-          </div>
-          <div class="stat-card coral">
-            <div class="stat-num">3.4x</div>
-            <div class="stat-label">more medical errors occur due to incomplete health history</div>
-          </div>
-          <div class="stat-card amber">
-            <div class="stat-num">5+</div>
-            <div class="stat-label">apps the average person uses to manage different health aspects</div>
-          </div>
-          <div class="stat-card lav">
-            <div class="stat-num">1 in 3</div>
-            <div class="stat-label">international patients lack digitized records from their home country</div>
-          </div>
-        </div>
-      </div>
-      <div class="problem-card">
-        <h3>🎯 The Core Problem</h3>
-        <div class="problem-item"><div class="problem-dot"></div><span>Health records are siloed across multiple hospitals, apps, and paper files with no unified view</span></div>
-        <div class="problem-item"><div class="problem-dot"></div><span>International patients face critical gaps when moving between healthcare systems in different countries</span></div>
-        <div class="problem-item"><div class="problem-dot"></div><span>Existing apps offer generic, one-size-fits-all recommendations that don't account for individual health context</span></div>
-        <div class="problem-item"><div class="problem-dot"></div><span>Patients have no ownership or control over their own health data</span></div>
-        <div class="problem-item"><div class="problem-dot"></div><span>Scheduling, records, reminders, and insights require multiple apps, creating friction and drop-off</span></div>
-        <div style="margin-top:24px; background:rgba(26,191,171,0.15); border-radius:12px; padding:16px;">
-          <div style="font-size:0.78rem; color:var(--teal); font-weight:700; margin-bottom:6px;">DESIGN GOAL</div>
-          <div style="font-size:0.9rem; color:rgba(255,255,255,0.85); line-height:1.6">Build a single health companion that centralizes records, delivers personalized guidance, and travels with users across borders and providers.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH -->
-<section class="research" id="research">
-  <div class="container">
-    <span class="section-label">Research & Insights</span>
-    <h2 class="section-title">Listening before designing</h2>
-    <p class="section-desc">Interviews and surveys with users across varying healthcare backgrounds, including international students, chronic condition patients, and healthcare professionals, revealed six consistent themes.</p>
-    <div class="insight-grid">
-      <div class="insight-card c1">
-        <div class="insight-icon">🗂️</div>
-        <h4>Fragmented Records</h4>
-        <p>Users juggle paper reports, email attachments, hospital portals, and pharmacy records with no single place to see their complete health picture.</p>
-      </div>
-      <div class="insight-card c2">
-        <div class="insight-icon">🌍</div>
-        <h4>Cross-Border Gaps</h4>
-        <p>International users, especially students, arrive with no digital records. Hospitals in many regions don't provide portable or digitized patient data.</p>
-      </div>
-      <div class="insight-card c3">
-        <div class="insight-icon">💡</div>
-        <h4>Generic Advice Fails</h4>
-        <p>Generic health apps offer the same advice to everyone. Users want insights tailored to their actual labs, vitals, and medical history.</p>
-      </div>
-      <div class="insight-card c4">
-        <div class="insight-icon">📅</div>
-        <h4>Missed Appointments</h4>
-        <p>Without proactive reminders connected to health history, users frequently miss follow-ups and routine checkups that could prevent escalation.</p>
-      </div>
-      <div class="insight-card c5">
-        <div class="insight-icon">🔒</div>
-        <h4>Privacy Anxiety</h4>
-        <p>Users want control. They're willing to share records with doctors but want full visibility over who sees what, and when.</p>
-      </div>
-      <div class="insight-card c6">
-        <div class="insight-icon">⌚</div>
-        <h4>Wearable Data Unused</h4>
-        <p>Most users wear fitness trackers but their data never reaches their doctors. They want a bridge between lifestyle data and clinical records.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PERSONAS -->
-<section class="persona-section" id="personas">
-  <div class="container">
-    <span class="section-label">User Personas</span>
-    <h2 class="section-title">Who we're designing for</h2>
-    <p class="section-desc">Three distinct archetypes emerged from user research, each representing a real segment of the Health Track audience with unique needs, pain points, and behaviors.</p>
-    <div class="persona-cards">
-      <div class="persona-card">
-        <div class="persona-header">
-          <div class="persona-avatar">👩‍💻</div>
-          <div>
-            <div class="persona-name">Anika Sharma, 24</div>
-            <div class="persona-role">International Student · Master's, Computer Science</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <div class="persona-tags">
-            <span class="persona-tag">Tech-savvy</span>
-            <span class="persona-tag">Health-conscious</span>
-            <span class="persona-tag">Mobile-first</span>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">🎯 Goals</div>
-            <ul><li>Access Indian medical records without calling multiple hospitals</li><li>Find a US doctor quickly and share context efficiently</li><li>Track new health data from her smartwatch</li></ul>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">😤 Frustrations</div>
-            <ul><li>Old reports are on paper at a hospital in Hyderabad</li><li>US doctors don't understand her previous treatments without context</li><li>Uses 4 different apps that don't talk to each other</li></ul>
-          </div>
-          <div class="persona-quote">"I just want one place to show my doctor everything they need to know about me."</div>
-        </div>
-      </div>
-
-      <div class="persona-card">
-        <div class="persona-header p2">
-          <div class="persona-avatar">👨‍💼</div>
-          <div>
-            <div class="persona-name">Marcus Li, 42</div>
-            <div class="persona-role">Project Manager · Chronic Hypertension</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <div class="persona-tags">
-            <span class="persona-tag" style="background:#F0EEFF;color:#8B7CF6">Moderate tech</span>
-            <span class="persona-tag" style="background:#F0EEFF;color:#8B7CF6">Routine-driven</span>
-            <span class="persona-tag" style="background:#F0EEFF;color:#8B7CF6">Multiple providers</span>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">🎯 Goals</div>
-            <ul><li>Track blood pressure trends and share with cardiologist</li><li>Never miss a medication refill or follow-up appointment</li><li>Understand what his lab values mean without Googling</li></ul>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">😤 Frustrations</div>
-            <ul><li>Three different doctors use three different portals with no integration</li><li>Can't remember which medications he's taken when symptoms appear</li><li>Gets generic "exercise more, eat less salt" advice that doesn't fit his life</li></ul>
-          </div>
-          <div class="persona-quote">"My cardiologist doesn't see what my GP prescribed last month. It's a mess."</div>
-        </div>
-      </div>
-
-      <div class="persona-card">
-        <div class="persona-header p3">
-          <div class="persona-avatar">👩‍⚕️</div>
-          <div>
-            <div class="persona-name">Dr. Priya Nair, 38</div>
-            <div class="persona-role">General Practitioner · Primary Care</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <div class="persona-tags">
-            <span class="persona-tag" style="background:#FFE8E8;color:#FF6B6B">Provider</span>
-            <span class="persona-tag" style="background:#FFE8E8;color:#FF6B6B">Data-driven</span>
-            <span class="persona-tag" style="background:#FFE8E8;color:#FF6B6B">Time-constrained</span>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">🎯 Goals</div>
-            <ul><li>Review a new patient's complete history before an appointment</li><li>Securely receive shared records without a fax machine</li><li>Reduce time spent asking "what medications are you taking?"</li></ul>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">😤 Frustrations</div>
-            <ul><li>Patients arrive with records on their phone, photos of paper</li><li>No standard format for receiving patient history digitally</li><li>Spends first 10 minutes of every visit on history-gathering</li></ul>
-          </div>
-          <div class="persona-quote">"If patients could share a clean health summary before they walk in, I could focus on actually helping them."</div>
-        </div>
-      </div>
-
-      <div class="persona-card" style="border: 2px solid var(--teal-light);">
-        <div class="persona-header" style="background: linear-gradient(135deg, #FFB347, #E07B00);">
-          <div class="persona-avatar">👴</div>
-          <div>
-            <div class="persona-name">Ramesh Kalakota, 68</div>
-            <div class="persona-role">Retired Engineer · Multiple Conditions</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <div class="persona-tags">
-            <span class="persona-tag" style="background:#FFF5E0;color:#E07B00">Low tech comfort</span>
-            <span class="persona-tag" style="background:#FFF5E0;color:#E07B00">Family-supported</span>
-            <span class="persona-tag" style="background:#FFF5E0;color:#E07B00">Insurance-dependent</span>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">🎯 Goals</div>
-            <ul><li>Have his daughter manage and view his records on his behalf</li><li>Get medication reminders in simple, clear language</li><li>Share records with both his US doctor and family back home</li></ul>
-          </div>
-          <div class="persona-row">
-            <div class="persona-row-label">😤 Frustrations</div>
-            <ul><li>Apps are confusing with too many features and small text</li><li>Insurance holds most of his records, he has no copies</li><li>Can't communicate health history when visiting family abroad</li></ul>
-          </div>
-          <div class="persona-quote">"I need something my daughter can help me use. Something simple."</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY MAP -->
-<section class="journey" id="journey">
-  <div class="container">
-    <span class="section-label">User Journey Map</span>
-    <h2 class="section-title">Mapping Anika's experience</h2>
-    <p class="section-desc">Following Anika, an international student navigating a new healthcare system with no portable records, we mapped every touchpoint from recognizing a health need to finally feeling in control of her data.</p>
-
-    <!-- Persona context strip -->
-    <div style="background:linear-gradient(135deg,#0D2B45,#1B4F6A);border-radius:20px;padding:28px 36px;margin:40px 0 48px;display:flex;align-items:center;gap:24px;color:white;">
-      <div style="width:64px;height:64px;border-radius:50%;background:rgba(26,191,171,0.25);border:2px solid rgba(26,191,171,0.5);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;">👩‍💻</div>
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:4px;">Persona: Anika Sharma, 24</div>
-        <div style="font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.6"><strong style="color:rgba(255,255,255,0.9)">Scenario:</strong> Anika has been feeling unwell since arriving in the US for her master's program. She needs a doctor but has no medical history available here, her records are at a hospital in Hyderabad.</div>
-      </div>
-      <div style="margin-left:auto;background:rgba(26,191,171,0.15);border:1px solid rgba(26,191,171,0.3);border-radius:12px;padding:16px 20px;text-align:center;flex-shrink:0;">
-        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(26,191,171,0.8);margin-bottom:4px;">Goal</div>
-        <div style="font-size:0.84rem;color:white;line-height:1.5;">Find care + share<br>health history<br>seamlessly</div>
-      </div>
-    </div>
-
-    <!-- 5 Stage Cards -->
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
-
-      <!-- Connecting line -->
-      <div style="position:absolute;top:52px;left:10%;right:10%;height:3px;background:linear-gradient(90deg,#1ABFAB,#8B7CF6,#FF6B6B,#FFB347,#52D9C8);border-radius:2px;z-index:0;"></div>
-
-      <!-- Stage 1: Aware -->
-      <div style="position:relative;z-index:1;padding:0 6px;">
-        <div style="background:linear-gradient(135deg,#1ABFAB,#0D8A7F);border-radius:16px;padding:16px;margin-bottom:12px;text-align:center;color:white;box-shadow:0 8px 24px rgba(26,191,171,0.35);">
-          <div style="font-size:1.4rem;margin-bottom:4px;">😟</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0.8;margin-bottom:2px;">Stage 01</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;">Aware</div>
-        </div>
-        <div style="background:white;border-radius:14px;padding:14px;border:2px solid rgba(26,191,171,0.2);box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">📋 Action</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Googles symptoms, opens 3 health apps, feels overwhelmed by options.</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">💬 Thought</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;font-style:italic;margin-bottom:10px;">"I need help but I don't know where to start."</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">🚧 Pain Point</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">No centralized starting point. Too many fragmented apps.</div>
-          <div style="background:#E0FAF7;border-radius:8px;padding:8px;font-size:0.72rem;color:#0D8A7F;font-weight:500;line-height:1.5;">✨ <strong>Opp:</strong> One-touch health overview with smart triage</div>
-        </div>
-      </div>
-
-      <!-- Stage 2: Search -->
-      <div style="position:relative;z-index:1;padding:0 6px;">
-        <div style="background:linear-gradient(135deg,#8B7CF6,#5E4DB8);border-radius:16px;padding:16px;margin-bottom:12px;text-align:center;color:white;box-shadow:0 8px 24px rgba(139,124,246,0.35);">
-          <div style="font-size:1.4rem;margin-bottom:4px;">😐</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0.8;margin-bottom:2px;">Stage 02</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;">Search</div>
-        </div>
-        <div style="background:white;border-radius:14px;padding:14px;border:2px solid rgba(139,124,246,0.2);box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8B7CF6;margin-bottom:6px;">📋 Action</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Searches for doctors, checks insurance, compares ratings online.</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8B7CF6;margin-bottom:6px;">💬 Thought</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;font-style:italic;margin-bottom:10px;">"Will this doctor understand my background?"</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8B7CF6;margin-bottom:6px;">🚧 Pain Point</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Can't pre-share health context with the clinic before arriving.</div>
-          <div style="background:#F0EEFF;border-radius:8px;padding:8px;font-size:0.72rem;color:#5E4DB8;font-weight:500;line-height:1.5;">✨ <strong>Opp:</strong> Provider finder + pre-appointment record sharing</div>
-        </div>
-      </div>
-
-      <!-- Stage 3: Record -->
-      <div style="position:relative;z-index:1;padding:0 6px;">
-        <div style="background:linear-gradient(135deg,#FF6B6B,#C84B4B);border-radius:16px;padding:16px;margin-bottom:12px;text-align:center;color:white;box-shadow:0 8px 24px rgba(255,107,107,0.35);">
-          <div style="font-size:1.4rem;margin-bottom:4px;">😤</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0.8;margin-bottom:2px;">Stage 03</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;">Record</div>
-        </div>
-        <div style="background:white;border-radius:14px;padding:14px;border:2px solid rgba(255,107,107,0.2);box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#FF6B6B;margin-bottom:6px;">📋 Action</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Emails family in India for old reports. Photographs paper docs. Uploads to Drive.</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#FF6B6B;margin-bottom:6px;">💬 Thought</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;font-style:italic;margin-bottom:10px;">"Why is getting my own records this complicated?"</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#FF6B6B;margin-bottom:6px;">🚧 Pain Point</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Records trapped in overseas hospitals with no digital access.</div>
-          <div style="background:#FFE8E8;border-radius:8px;padding:8px;font-size:0.72rem;color:#C84B4B;font-weight:500;line-height:1.5;">✨ <strong>Opp:</strong> Upload via camera, cloud, or hospital API</div>
-        </div>
-      </div>
-
-      <!-- Stage 4: Consult -->
-      <div style="position:relative;z-index:1;padding:0 6px;">
-        <div style="background:linear-gradient(135deg,#FFB347,#E07B00);border-radius:16px;padding:16px;margin-bottom:12px;text-align:center;color:white;box-shadow:0 8px 24px rgba(255,179,71,0.35);">
-          <div style="font-size:1.4rem;margin-bottom:4px;">😬</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0.8;margin-bottom:2px;">Stage 04</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;">Consult</div>
-        </div>
-        <div style="background:white;border-radius:14px;padding:14px;border:2px solid rgba(255,179,71,0.2);box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#E07B00;margin-bottom:6px;">📋 Action</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Arrives at clinic, fills intake form, doctor asks history. Anika has no organized answer.</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#E07B00;margin-bottom:6px;">💬 Thought</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;font-style:italic;margin-bottom:10px;">"I'm wasting the doctor's time explaining from scratch."</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#E07B00;margin-bottom:6px;">🚧 Pain Point</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">No organized health history to show. Doctor starts from zero.</div>
-          <div style="background:#FFF5E0;border-radius:8px;padding:8px;font-size:0.72rem;color:#E07B00;font-weight:500;line-height:1.5;">✨ <strong>Opp:</strong> Shareable health summary card (QR / link)</div>
-        </div>
-      </div>
-
-      <!-- Stage 5: Manage -->
-      <div style="position:relative;z-index:1;padding:0 6px;">
-        <div style="background:linear-gradient(135deg,#52D9C8,#1ABFAB);border-radius:16px;padding:16px;margin-bottom:12px;text-align:center;color:white;box-shadow:0 8px 24px rgba(82,217,200,0.35);">
-          <div style="font-size:1.4rem;margin-bottom:4px;">😌</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0.8;margin-bottom:2px;">Stage 05</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;">Manage</div>
-        </div>
-        <div style="background:white;border-radius:14px;padding:14px;border:2px solid rgba(82,217,200,0.2);box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">📋 Action</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Gets prescription. Sets calendar reminder. Loses follow-up info within a week.</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">💬 Thought</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;font-style:italic;margin-bottom:10px;">"I'll forget this by next month. I always do."</div>
-          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#1ABFAB;margin-bottom:6px;">🚧 Pain Point</div>
-          <div style="font-size:0.75rem;color:#4A6378;line-height:1.55;margin-bottom:10px;">Records, prescriptions & follow-ups scattered across platforms.</div>
-          <div style="background:#E0FAF7;border-radius:8px;padding:8px;font-size:0.72rem;color:#0D8A7F;font-weight:500;line-height:1.5;">✨ <strong>Opp:</strong> Smart reminders + follow-up tracking</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Emotion arc chart -->
-    <div style="margin-top:40px;background:white;border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:1px solid #E2EEF4;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2B45;margin-bottom:24px;">Emotional Journey Arc</div>
-      <div style="display:flex;align-items:flex-end;gap:0;height:80px;padding:0 40px;position:relative;">
-        <!-- Y axis labels -->
-        <div style="position:absolute;left:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between;">
-          <div style="font-size:0.65rem;color:#94A3B8;">😊 High</div>
-          <div style="font-size:0.65rem;color:#94A3B8;">😐 Mid</div>
-          <div style="font-size:0.65rem;color:#94A3B8;">😟 Low</div>
-        </div>
-        <svg viewBox="0 0 500 80" style="width:100%;height:80px;">
-          <defs>
-            <linearGradient id="emoGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#1ABFAB"/>
-              <stop offset="25%" stop-color="#8B7CF6"/>
-              <stop offset="50%" stop-color="#FF6B6B"/>
-              <stop offset="75%" stop-color="#FFB347"/>
-              <stop offset="100%" stop-color="#52D9C8"/>
-            </linearGradient>
-          </defs>
-          <!-- Grid lines -->
-          <line x1="0" y1="20" x2="500" y2="20" stroke="#F1F5F9" stroke-width="1"/>
-          <line x1="0" y1="40" x2="500" y2="40" stroke="#F1F5F9" stroke-width="1"/>
-          <line x1="0" y1="60" x2="500" y2="60" stroke="#F1F5F9" stroke-width="1"/>
-          <!-- Emotion curve: Anxious → Uncertain → Frustrated → Embarrassed → Relieved -->
-          <polyline points="50,65 150,50 250,70 350,60 450,30" stroke="url(#emoGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Dots -->
-          <circle cx="50" cy="65" r="6" fill="#1ABFAB"/>
-          <circle cx="150" cy="50" r="6" fill="#8B7CF6"/>
-          <circle cx="250" cy="70" r="6" fill="#FF6B6B"/>
-          <circle cx="350" cy="60" r="6" fill="#FFB347"/>
-          <circle cx="450" cy="30" r="6" fill="#52D9C8"/>
-          <!-- Labels -->
-          <text x="50" y="78" text-anchor="middle" font-size="8" fill="#94A3B8">Anxious</text>
-          <text x="150" y="78" text-anchor="middle" font-size="8" fill="#94A3B8">Uncertain</text>
-          <text x="250" y="78" text-anchor="middle" font-size="8" fill="#94A3B8">Frustrated</text>
-          <text x="350" y="78" text-anchor="middle" font-size="8" fill="#94A3B8">Embarrassed</text>
-          <text x="450" y="78" text-anchor="middle" font-size="8" fill="#94A3B8">Relieved</text>
-        </svg>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- LO-FI WIREFRAMES (consolidated) -->
-<section class="lofi" id="wireframes">
-  <div class="container">
-    <span class="section-label">Skeleton · Lo-Fi Wireframes</span>
-    <h2 class="section-title">Thinking on paper first</h2>
-    <p class="section-desc">Before opening Figma, every screen was sketched by hand, forcing decisions about hierarchy and flow without the distraction of color or polish.</p>
-
-    <div style="background:linear-gradient(135deg,#FFFDF5,#FFF8E8);border:2px dashed #FFD580;border-radius:20px;padding:24px 32px;margin:36px 0 40px;display:flex;align-items:center;gap:16px;">
-      <div style="font-size:1.8rem;flex-shrink:0">✏️</div>
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2B45;margin-bottom:4px">Original Pencil Sketches</div>
-        <div style="font-size:0.82rem;color:#6B7A8D;line-height:1.6">Lo-fi forces you to focus on structure, not aesthetics. These two sketches capture the two most critical screens: the Dashboard (where users land) and the Records flow (the core use case).</div>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
-
-      <!-- Wireframe 1: Dashboard / Home -->
-      <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1px solid #E2EEF4;">
-        <div style="background:#F4F8FB;padding:12px 20px;border-bottom:1px solid #E2EEF4;display:flex;align-items:center;gap:10px;">
-          <div style="width:24px;height:24px;border-radius:50%;background:#1ABFAB;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:white;font-size:0.75rem;flex-shrink:0;">1</div>
-          <div>
-            <div style="font-size:0.8rem;font-weight:700;color:#0D2B45;">Dashboard. Home Screen</div>
-            <div style="font-size:0.7rem;color:#8CA0B3;">The hub: search, services, appointments, and health overview</div>
-          </div>
-        </div>
-        <div style="padding:24px;">
-          <svg viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:8px;background:#FAFAFA;">
-            <!-- Status bar -->
-            <rect x="0" y="0" width="280" height="18" fill="#F0F4F7"/>
-            <text x="12" y="12" font-size="7" fill="#9CA3AF" font-family="sans-serif">9:41</text>
-            <text x="240" y="12" font-size="7" fill="#9CA3AF" font-family="sans-serif">●●●</text>
-            <!-- Header greeting -->
-            <text x="16" y="36" font-size="9" font-weight="bold" fill="#0D2B45" font-family="sans-serif">Hello, Nikhitha 👋</text>
-            <text x="16" y="48" font-size="6.5" fill="#8CA0B3" font-family="sans-serif">Monday, June 8</text>
-            <!-- Search bar -->
-            <rect x="16" y="56" width="248" height="22" rx="6" fill="#F0F4F7" stroke="#E2EEF4" stroke-width="1"/>
-            <text x="26" y="70" font-size="7" fill="#8CA0B3" font-family="sans-serif">🔍  Search medical records…</text>
-            <!-- Services label -->
-            <text x="16" y="95" font-size="8" font-weight="bold" fill="#0D2B45" font-family="sans-serif">Services</text>
-            <!-- 4 service icons -->
-            <rect x="16" y="102" width="54" height="48" rx="8" fill="#E0FAF7"/>
-            <text x="43" y="124" font-size="16" text-anchor="middle" font-family="sans-serif">🗓️</text>
-            <text x="43" y="142" font-size="6" text-anchor="middle" fill="#1ABFAB" font-family="sans-serif">Schedule</text>
-            <rect x="78" y="102" width="54" height="48" rx="8" fill="#FFE8E8"/>
-            <text x="105" y="124" font-size="16" text-anchor="middle" font-family="sans-serif">📋</text>
-            <text x="105" y="142" font-size="6" text-anchor="middle" fill="#FF6B6B" font-family="sans-serif">Records</text>
-            <rect x="140" y="102" width="54" height="48" rx="8" fill="#FFF5E0"/>
-            <text x="167" y="124" font-size="16" text-anchor="middle" font-family="sans-serif">💊</text>
-            <text x="167" y="142" font-size="6" text-anchor="middle" fill="#FFB347" font-family="sans-serif">Meds</text>
-            <rect x="202" y="102" width="54" height="48" rx="8" fill="#F0EEFF"/>
-            <text x="229" y="124" font-size="16" text-anchor="middle" font-family="sans-serif">📊</text>
-            <text x="229" y="142" font-size="6" text-anchor="middle" fill="#8B7CF6" font-family="sans-serif">Reports</text>
-            <!-- Promo card -->
-            <rect x="16" y="160" width="248" height="40" rx="10" fill="#1ABFAB"/>
-            <text x="28" y="176" font-size="8.5" font-weight="bold" fill="white" font-family="sans-serif">Get Best Medical Services</text>
-            <text x="28" y="190" font-size="6.5" fill="rgba(255,255,255,0.8)" font-family="sans-serif">Top-rated doctors near you →</text>
-            <!-- Upcoming appointments -->
-            <text x="16" y="218" font-size="8" font-weight="bold" fill="#0D2B45" font-family="sans-serif">Upcoming Appointments</text>
-            <rect x="16" y="226" width="248" height="32" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="232" width="20" height="20" rx="4" fill="#1ABFAB"/>
-            <text x="34" y="241" font-size="6" text-anchor="middle" fill="white" font-weight="bold" font-family="sans-serif">30</text>
-            <text x="34" y="249" font-size="4.5" text-anchor="middle" fill="white" font-family="sans-serif">APR</text>
-            <text x="52" y="239" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Dr. Sarah Chen</text>
-            <text x="52" y="250" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">Cardiologist · 3:00pm</text>
-            <rect x="16" y="264" width="248" height="32" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="270" width="20" height="20" rx="4" fill="#8B7CF6"/>
-            <text x="34" y="279" font-size="6" text-anchor="middle" fill="white" font-weight="bold" font-family="sans-serif">12</text>
-            <text x="34" y="287" font-size="4.5" text-anchor="middle" fill="white" font-family="sans-serif">MAY</text>
-            <text x="52" y="277" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Dr. Mooni Shane</text>
-            <text x="52" y="288" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">Pulmonologist · 11:00am</text>
-            <!-- Bottom nav -->
-            <rect x="0" y="332" width="280" height="28" fill="white" stroke="#E2EEF4" stroke-width="1"/>
-            <text x="35" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">🏠</text>
-            <text x="95" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">📅</text>
-            <text x="155" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">📋</text>
-            <text x="215" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">👤</text>
-          </svg>
-          <p style="font-size:0.75rem;color:#8CA0B3;margin-top:12px;line-height:1.55;">The home screen surfaces the 4 most-used actions as large touch targets, followed by a promotional card and upcoming appointments, putting the most time-sensitive information front and center.</p>
-        </div>
-      </div>
-
-      <!-- Wireframe 2: Medical Records -->
-      <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1px solid #E2EEF4;">
-        <div style="background:#F4F8FB;padding:12px 20px;border-bottom:1px solid #E2EEF4;display:flex;align-items:center;gap:10px;">
-          <div style="width:24px;height:24px;border-radius:50%;background:#FF6B6B;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:white;font-size:0.75rem;flex-shrink:0;">2</div>
-          <div>
-            <div style="font-size:0.8rem;font-weight:700;color:#0D2B45;">Medical Records. Core Use Case</div>
-            <div style="font-size:0.7rem;color:#8CA0B3;">Upload, organise, and access your full health history</div>
-          </div>
-        </div>
-        <div style="padding:24px;">
-          <svg viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:8px;background:#FAFAFA;">
-            <!-- Status bar -->
-            <rect x="0" y="0" width="280" height="18" fill="#F0F4F7"/>
-            <text x="12" y="12" font-size="7" fill="#9CA3AF" font-family="sans-serif">9:41</text>
-            <!-- Header -->
-            <text x="16" y="36" font-size="9" font-weight="bold" fill="#0D2B45" font-family="sans-serif">Medical Records</text>
-            <text x="248" y="36" font-size="14" font-family="sans-serif" fill="#1ABFAB">⋯</text>
-            <!-- Add button -->
-            <rect x="16" y="44" width="248" height="26" rx="8" fill="#1ABFAB"/>
-            <text x="140" y="61" font-size="7.5" text-anchor="middle" fill="white" font-weight="bold" font-family="sans-serif">+ Upload New Record</text>
-            <!-- Records list -->
-            <rect x="16" y="80" width="248" height="36" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="88" width="22" height="22" rx="6" fill="#E0FAF7"/>
-            <text x="35" y="102" font-size="12" text-anchor="middle" font-family="sans-serif">📄</text>
-            <text x="54" y="96" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">General Health</text>
-            <text x="54" y="107" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">5 files · Last updated Jun 2024</text>
-            <text x="255" y="100" font-size="10" fill="#1ABFAB" font-family="sans-serif">›</text>
-            <rect x="16" y="124" width="248" height="36" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="132" width="22" height="22" rx="6" fill="#FFE8E8"/>
-            <text x="35" y="146" font-size="12" text-anchor="middle" font-family="sans-serif">🩺</text>
-            <text x="54" y="140" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Blood Pressure</text>
-            <text x="54" y="151" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">3 files · Last updated May 2024</text>
-            <text x="255" y="144" font-size="10" fill="#1ABFAB" font-family="sans-serif">›</text>
-            <rect x="16" y="168" width="248" height="36" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="176" width="22" height="22" rx="6" fill="#FFF5E0"/>
-            <text x="35" y="190" font-size="12" text-anchor="middle" font-family="sans-serif">💊</text>
-            <text x="54" y="184" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Prescriptions</text>
-            <text x="54" y="195" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">8 files · Last updated Apr 2024</text>
-            <text x="255" y="188" font-size="10" fill="#1ABFAB" font-family="sans-serif">›</text>
-            <rect x="16" y="212" width="248" height="36" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="220" width="22" height="22" rx="6" fill="#F0EEFF"/>
-            <text x="35" y="234" font-size="12" text-anchor="middle" font-family="sans-serif">🧪</text>
-            <text x="54" y="228" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Lab Results</text>
-            <text x="54" y="239" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">12 files · Last updated Mar 2024</text>
-            <text x="255" y="232" font-size="10" fill="#1ABFAB" font-family="sans-serif">›</text>
-            <rect x="16" y="256" width="248" height="36" rx="8" fill="#F7FFFE" stroke="#E2EEF4" stroke-width="1"/>
-            <rect x="24" y="264" width="22" height="22" rx="6" fill="#E0FAF7"/>
-            <text x="35" y="278" font-size="12" text-anchor="middle" font-family="sans-serif">🏥</text>
-            <text x="54" y="272" font-size="7" font-weight="600" fill="#0D2B45" font-family="sans-serif">Tuberculosis</text>
-            <text x="54" y="283" font-size="5.5" fill="#8CA0B3" font-family="sans-serif">13 files · Last updated Feb 2024</text>
-            <text x="255" y="276" font-size="10" fill="#1ABFAB" font-family="sans-serif">›</text>
-            <!-- Floating add -->
-            <circle cx="240" cy="308" r="16" fill="#1ABFAB" style="filter:drop-shadow(0 4px 8px rgba(26,191,171,0.4))"/>
-            <text x="240" y="314" font-size="16" text-anchor="middle" fill="white" font-family="sans-serif">+</text>
-            <!-- Bottom nav -->
-            <rect x="0" y="332" width="280" height="28" fill="white" stroke="#E2EEF4" stroke-width="1"/>
-            <text x="35" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">🏠</text>
-            <text x="95" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">📅</text>
-            <text x="155" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">📋</text>
-            <text x="215" y="350" font-size="12" text-anchor="middle" font-family="sans-serif">👤</text>
-          </svg>
-          <p style="font-size:0.75rem;color:#8CA0B3;margin-top:12px;line-height:1.55;">Records are grouped by category and surfaced as scannable rows. A persistent FAB (floating action button) lets users upload at any point in their browsing session, not just from a designated 'upload' screen.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- HIGH FIDELITY SCREENS -->
-<section class="hifi" id="screens">
-  <div class="container">
-    <span class="section-label">Surface · High-Fidelity Screens</span>
-    <h2 class="section-title">From sketches to pixels</h2>
-    <p class="section-desc">The final screens bring together all research, structure, and skeleton decisions into a polished, accessible visual design, built for trust, clarity, and calm.</p>
-    <div class="screens-grid">
-
-      <!-- Screen 1: Onboarding -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-onboard">
-            <div class="sc-onboard-ill">🏥</div>
-            <div class="sc-onboard-title">Welcome to your<br>personal health tracker</div>
-            <div class="sc-onboard-sub">All your health records,<br>insights & appointments in one place</div>
-            <div class="sc-btn">Get Started →</div>
-          </div>
-        </div>
-        <div class="screen-label">Onboarding</div>
-      </div>
-
-      <!-- Screen 2: Login -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div style="padding:4px 0;">
-            <div class="sc-sub" style="margin-bottom:10px">Welcome!</div>
-            <div class="sc-title" style="font-size:10px;margin-bottom:6px">Log in to continue</div>
-            <div class="sc-login-input">✉️ &nbsp; nikhitha@gmail.com</div>
-            <div class="sc-login-input">🔒 &nbsp; ••••••••</div>
-            <div style="text-align:right;font-size:5px;color:#1ABFAB;margin-bottom:6px">Forgot Password?</div>
-            <div class="sc-btn" style="display:block;text-align:center;margin-bottom:6px">LOGIN</div>
-            <div style="text-align:center;font-size:5px;opacity:.4;margin-bottom:4px">— or continue with:</div>
-            <div class="sc-social-row">
-              <div class="sc-social-btn">🇬</div>
-              <div class="sc-social-btn">🍎</div>
-              <div class="sc-social-btn">🔵</div>
+            <div class="persona-row">
+              <div class="persona-row-label">Pain Points</div>
+              <ul>
+                <li>No digital records from India; hospitals only print</li>
+                <li>Doesn't know where all her records are stored</li>
+                <li>Fears data misuse if she shares sensitive info</li>
+              </ul>
             </div>
-            <div style="text-align:center;margin-top:8px">
-              <div class="sc-btn" style="background:rgba(255,255,255,0.08);">SIGN UP</div>
-            </div>
+            <div class="persona-quote">"I just need my records in one place so I don't have to ask my mom to mail me documents from India every time I see a new doctor."</div>
           </div>
-        </div>
-        <div class="screen-label">Login</div>
-      </div>
+        </article>
 
-      <!-- Screen 3: Home -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="ps-header">
+        <article class="persona-card">
+          <header class="persona-header p2">
+            <div class="persona-avatar">👵</div>
             <div>
-              <div class="ps-hello">Hello, Nikhitha 👋</div>
-              <div class="ps-sub">Monday, June 8</div>
+              <h3 class="persona-name">Margaret, the Chronic Condition Manager</h3>
+              <p class="persona-role">Age 62, Managing multiple specialists</p>
             </div>
-            <div style="font-size:14px">🔔</div>
+          </header>
+          <div class="persona-body">
+            <div class="persona-tags">
+              <span class="persona-tag">Organized</span>
+              <span class="persona-tag">Health-conscious</span>
+              <span class="persona-tag">Detail-oriented</span>
+            </div>
+            <div class="persona-row">
+              <div class="persona-row-label">Goals</div>
+              <ul>
+                <li>Track health metrics across 5+ specialists</li>
+                <li>Understand correlations between diet, meds, and symptoms</li>
+                <li>Prepare for doctor visits with comprehensive history</li>
+              </ul>
+            </div>
+            <div class="persona-row">
+              <div class="persona-row-label">Pain Points</div>
+              <ul>
+                <li>Specialists don't communicate; she has to explain everything</li>
+                <li>No way to see if new symptoms relate to past issues</li>
+                <li>Forgets which doctor recommended which medication</li>
+              </ul>
+            </div>
+            <div class="persona-quote">"If my cardiologist could see what my endocrinologist is seeing, maybe they'd understand my overall picture better."</div>
           </div>
-          <div class="ps-search">🔍 Search medical records…</div>
-          <div class="ps-section-title">Services</div>
-          <div class="ps-icons">
-            <div class="ps-icon teal">🗓️<span>Schedule</span></div>
-            <div class="ps-icon coral">📋<span>Records</span></div>
-            <div class="ps-icon amber">💊<span>Meds</span></div>
-            <div class="ps-icon lav">📊<span>Reports</span></div>
-          </div>
-          <div class="ps-card">
-            <div class="ps-card-title">Get Best Medical Services</div>
-            <div class="ps-card-sub">Specialists near you, instantly</div>
-          </div>
-          <div class="ps-section-title">Upcoming</div>
-          <div class="ps-appt">
-            <div class="ps-appt-date">30<br>APR</div>
-            <div class="ps-appt-info">
-              <div class="ps-appt-name">Dr. Sarah Chen</div>
-              <div class="ps-appt-spec">Cardiologist</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY MAP SECTION -->
+  <section class="journey" id="journey">
+    <div class="container">
+      <span class="section-label">User Journey Map</span>
+      <h2 class="section-title">The experience from start to resolution</h2>
+      
+      <div class="journey-map">
+        <table class="jm-table">
+          <thead class="jm-header">
+            <tr>
+              <th>Stage</th>
+              <th>Awareness</th>
+              <th>Onboarding</th>
+              <th>Activation</th>
+              <th>Habit</th>
+              <th>Advocacy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="jm-row-label">
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">User Actions</div>
+              </td>
+              <td class="jm-cell">Discovers Health Track through word-of-mouth or app store</td>
+              <td class="jm-cell">Signs up, grants permissions, starts uploading records</td>
+              <td class="jm-cell">Schedules first appointment, views health insights</td>
+              <td class="jm-cell">Regularly checks health metrics, shares with doctors</td>
+              <td class="jm-cell">Recommends app to friends with similar needs</td>
+            </tr>
+            <tr>
+              <td class="jm-row-label">
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">Emotions</div>
+              </td>
+              <td class="jm-cell"><span class="emotion-mid">😐</span> Skeptical</td>
+              <td class="jm-cell"><span class="emotion-low">😟</span> Concerned about security</td>
+              <td class="jm-cell"><span class="emotion-high">😊</span> Relieved & empowered</td>
+              <td class="jm-cell"><span class="emotion-high">😄</span> Confident & in control</td>
+              <td class="jm-cell"><span class="emotion-high">🤩</span> Enthusiastic & grateful</td>
+            </tr>
+            <tr>
+              <td class="jm-row-label">
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">Touchpoints</div>
+              </td>
+              <td class="jm-cell">App store, reviews, social media</td>
+              <td class="jm-cell">Onboarding flow, permissions screen, setup wizard</td>
+              <td class="jm-cell">Dashboard, appointment scheduler, insights feed</td>
+              <td class="jm-cell">Regular notifications, reports, sharing features</td>
+              <td class="jm-cell">Referral program, social sharing, reviews</td>
+            </tr>
+            <tr>
+              <td class="jm-row-label">
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">Opportunities</div>
+              </td>
+              <td class="jm-cell">
+                <span class="stage-pill stage-1">Clear value prop</span>
+                <span class="stage-pill stage-1">Social proof</span>
+              </td>
+              <td class="jm-cell">
+                <span class="stage-pill stage-2">Security assurance</span>
+                <span class="stage-pill stage-2">Quick wins</span>
+              </td>
+              <td class="jm-cell">
+                <span class="stage-pill stage-3">Onward aha moment</span>
+                <span class="stage-pill stage-3">Doctor integration</span>
+              </td>
+              <td class="jm-cell">
+                <span class="stage-pill stage-4">Personalization</span>
+                <span class="stage-pill stage-4">Community</span>
+              </td>
+              <td class="jm-cell">
+                <span class="stage-pill stage-5">Viral loops</span>
+                <span class="stage-pill stage-5">Premium features</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS SECTION -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <span class="section-label">Design Solutions</span>
+      <h2 class="section-title">How we solve the problem</h2>
+      
+      <div class="solutions-grid">
+        <article class="solution-card s1">
+          <div class="solution-icon">🗂️</div>
+          <h4>Unified Record Hub</h4>
+          <p>A central, searchable repository for all medical records, regardless of source—hospital portals, doctor uploads, or manual imports—accessible anytime, anywhere.</p>
+        </article>
+        <article class="solution-card s2">
+          <div class="solution-icon">🔐</div>
+          <h4>Privacy by Design</h4>
+          <p>End-to-end encryption, granular sharing controls, and transparent data practices give users full ownership and confidence in their sensitive health information.</p>
+        </article>
+        <article class="solution-card s3">
+          <div class="solution-icon">📊</div>
+          <h4>Smart Insights</h4>
+          <p>Machine learning identifies patterns in personal health data, offering actionable, contextual recommendations tailored to individual history and goals.</p>
+        </article>
+        <article class="solution-card s4">
+          <div class="solution-icon">🗓️</div>
+          <h4>Integrated Scheduling</h4>
+          <p>Built-in appointment booking connects users with trusted providers, eliminating the need for third-party calendar apps.</p>
+        </article>
+        <article class="solution-card s5">
+          <div class="solution-icon">🤝</div>
+          <h4>Doctor Collaboration</h4>
+          <p>Secure sharing links let users send verified records to new doctors without duplicating manual uploads.</p>
+        </article>
+        <article class="solution-card s6">
+          <div class="solution-icon">📱</div>
+          <h4>Mobile-First Experience</h4>
+          <p>Optimized for on-the-go access with offline support, push notifications for appointments, and a lightweight interface.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFLECTION SECTION -->
+  <section class="reflection" id="reflection">
+    <div class="container">
+      <span class="section-label">Reflection</span>
+      <h2 class="section-title">What I learned</h2>
+      
+      <div class="reflection-grid">
+        <article class="reflection-text">
+          <p>This project reinforced the power of listening to real user pain points and iterating on empathy. The most valuable insights came not from industry research alone, but from conversations with friends managing their health across continents and doctors frustrated by siloed patient data.</p>
+          <p>Designing for healthcare also taught me the importance of trust and transparency. When users are sharing sensitive medical information, every design decision—from color choices to data handling—communicates intent. Simplicity became essential; unnecessary features only added friction to an already stressful experience.</p>
+          <p>Most importantly, I realized that great product design doesn't live in a vacuum. Health Track exists to solve a human problem—giving people control and peace of mind about their own health. That mission informed every screen, every interaction, and every technical decision.</p>
+        </article>
+
+        <aside class="takeaways">
+          <div class="takeaway">
+            <div class="takeaway-num">1</div>
+            <div>
+              <h5>Listen obsessively</h5>
+              <p>User interviews shaped the product more than any assumption or industry trend ever could.</p>
             </div>
           </div>
-          <div class="ps-nav">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Home</div>
-      </div>
-
-      <!-- Screen 4: Medical Records -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-title">Medical Records</div>
-          <div class="sc-file"><div class="sc-file-icon">📄</div><div><div style="font-weight:600">General Health</div><div style="opacity:.5">5 files</div></div></div>
-          <div class="sc-file"><div class="sc-file-icon" style="background:rgba(255,107,107,0.25)">🩺</div><div><div style="font-weight:600">Blood Pressure</div><div style="opacity:.5">3 files</div></div></div>
-          <div class="sc-file"><div class="sc-file-icon" style="background:rgba(139,124,246,0.25)">🧪</div><div><div style="font-weight:600">Tuberculosis</div><div style="opacity:.5">13 files</div></div></div>
-          <div class="sc-file"><div class="sc-file-icon" style="background:rgba(255,179,71,0.25)">💊</div><div><div style="font-weight:600">Prescriptions</div><div style="opacity:.5">8 files</div></div></div>
-          <div class="sc-file"><div class="sc-file-icon" style="background:rgba(255,159,127,0.25)">🫀</div><div><div style="font-weight:600">Cardiology</div><div style="opacity:.5">2 files</div></div></div>
-          <div style="text-align:center;margin-top:8px"><div style="width:24px;height:24px;background:var(--teal);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px">+</div></div>
-          <div class="sc-nav-row" style="margin-top:6px">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Records</div>
-      </div>
-
-      <!-- Screen 5: Reports -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-title">Reports</div>
-          <div class="sc-metric">
-            <div class="sc-metric-val">96 <span style="font-size:8px;color:rgba(255,255,255,0.5)">bpm</span></div>
-            <div class="sc-metric-label">Heart Rate · Normal</div>
+          <div class="takeaway">
+            <div class="takeaway-num">2</div>
+            <div>
+              <h5>Privacy is a feature</h5>
+              <p>In healthcare, data protection is not just compliance—it's a core value that drives user trust and adoption.</p>
+            </div>
           </div>
-          <div class="sc-chart">
-            <div class="sc-bar-col" style="height:55%"></div>
-            <div class="sc-bar-col" style="height:70%"></div>
-            <div class="sc-bar-col hi" style="height:85%"></div>
-            <div class="sc-bar-col" style="height:60%"></div>
-            <div class="sc-bar-col" style="height:72%"></div>
-            <div class="sc-bar-col" style="height:65%"></div>
-            <div class="sc-bar-col hi" style="height:90%"></div>
+          <div class="takeaway">
+            <div class="takeaway-num">3</div>
+            <div>
+              <h5>Simplicity scales</h5>
+              <p>Removing unnecessary complexity made the app accessible to users across different tech literacy levels.</p>
+            </div>
           </div>
-          <div style="display:flex;gap:4px;margin-bottom:6px">
-            <div class="sc-file" style="flex:1;margin:0"><div style="font-size:7px;font-weight:700;color:var(--teal)">B+</div><div style="font-size:5px;opacity:.5">Blood Group</div></div>
-            <div class="sc-file" style="flex:1;margin:0"><div style="font-size:7px;font-weight:700;color:var(--teal)">60kg</div><div style="font-size:5px;opacity:.5">Weight</div></div>
+          <div class="takeaway">
+            <div class="takeaway-num">4</div>
+            <div>
+              <h5>Mobile-first is essential</h5>
+              <p>Health emergencies and appointments happen on the go; desktop-first thinking would have missed critical use cases.</p>
+            </div>
           </div>
-          <div class="sc-file"><div class="sc-file-icon">📄</div><div><div style="font-weight:600">General Health</div><div style="opacity:.5">5 Reports</div></div></div>
-          <div class="sc-nav-row" style="margin-top:4px">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Reports</div>
-      </div>
-
-      <!-- Screen 6: Schedule -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-title">Schedule</div>
-          <div class="sc-appt"><div class="sc-appt-d">30<br>APR</div><div><div style="font-weight:600">Dr. Sarah Chen</div><div style="opacity:.5">Cardiologist · 3:00PM</div></div></div>
-          <div class="sc-appt"><div class="sc-appt-d" style="background:#8B7CF6">12<br>MAY</div><div><div style="font-weight:600">Dr. Mooni Shane</div><div style="opacity:.5">Pulmonologist · 11AM</div></div></div>
-          <div class="sc-appt"><div class="sc-appt-d" style="background:#FF6B6B">20<br>MAY</div><div><div style="font-weight:600">Lab Test</div><div style="opacity:.5">Pathology · 9:00AM</div></div></div>
-          <div class="sc-appt"><div class="sc-appt-d" style="background:#FFB347">3<br>JUN</div><div><div style="font-weight:600">Dr. Kavita Rao</div><div style="opacity:.5">General Practice · 2PM</div></div></div>
-          <div style="text-align:center;margin-top:6px"><div class="sc-btn">+ Add Appointment</div></div>
-          <div class="sc-nav-row" style="margin-top:6px">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Schedule</div>
-      </div>
-
-      <!-- Screen 7: Book Appointment -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-file" style="margin-bottom:8px">
-            <div class="sc-file-icon" style="background:rgba(26,191,171,0.3);width:28px;height:28px;font-size:14px">👩‍⚕️</div>
-            <div><div style="font-weight:700;font-size:7.5px">Dr. Mooni Shane</div><div style="opacity:.5">Pulmonologist · ⭐ 4.9</div></div>
-          </div>
-          <div class="sc-sub">Select Date</div>
-          <div style="display:flex;gap:3px;margin-bottom:8px">
-            <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:4px;text-align:center;flex:1;font-size:5.5px"><div style="font-weight:700">8</div><div style="opacity:.5">OCT</div></div>
-            <div style="background:var(--teal);border-radius:6px;padding:4px;text-align:center;flex:1;font-size:5.5px"><div style="font-weight:700">9</div><div>OCT</div></div>
-            <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:4px;text-align:center;flex:1;font-size:5.5px"><div style="font-weight:700">10</div><div style="opacity:.5">OCT</div></div>
-            <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:4px;text-align:center;flex:1;font-size:5.5px"><div style="font-weight:700">11</div><div style="opacity:.5">OCT</div></div>
-          </div>
-          <div class="sc-sub">Select Time</div>
-          <div style="display:flex;gap:3px;margin-bottom:10px">
-            <div style="background:var(--teal);border-radius:5px;padding:4px 6px;font-size:5.5px;font-weight:600">8:00</div>
-            <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 6px;font-size:5.5px">11:00</div>
-            <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 6px;font-size:5.5px">14:00</div>
-          </div>
-          <div class="sc-btn" style="display:block;text-align:center">Book an Appointment</div>
-          <div class="sc-nav-row" style="margin-top:8px">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Book Appt.</div>
-      </div>
-
-      <!-- Screen 8: Notifications -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-title">Notifications</div>
-          <div class="sc-notification"><div class="sc-notif-dot"></div><div><div style="font-weight:600">Appointment Reminder</div><div style="opacity:.5">Dr. Sarah Chen tomorrow at 3pm</div></div></div>
-          <div class="sc-notification"><div class="sc-notif-dot amber"></div><div><div style="font-weight:600">Lab Results Ready</div><div style="opacity:.5">Your CBC results are available</div></div></div>
-          <div class="sc-notification"><div class="sc-notif-dot red"></div><div><div style="font-weight:600">Medication Due</div><div style="opacity:.5">Lisinopril, 8:00 PM tonight</div></div></div>
-          <div class="sc-notification"><div class="sc-notif-dot" style="background:#8B7CF6"></div><div><div style="font-weight:600">Health Insight</div><div style="opacity:.5">Your heart rate trend looks good!</div></div></div>
-          <div class="sc-notification"><div class="sc-notif-dot"></div><div><div style="font-weight:600">Record Uploaded</div><div style="opacity:.5">Blood pressure report saved</div></div></div>
-          <div class="sc-notification" style="opacity:.4"><div class="sc-notif-dot" style="background:#555"></div><div><div style="font-weight:600">Weekly Summary</div><div style="opacity:.5">Your health digest is ready</div></div></div>
-          <div class="sc-nav-row" style="margin-top:4px">🏠 📅 📋 🔔</div>
-        </div>
-        <div class="screen-label">Notifications</div>
-      </div>
-
-      <!-- Screen 9: Health Insights / Diet -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div class="sc-title">Health Insights</div>
-          <div class="sc-toggle-row">
-            <div class="sc-toggle active">Today</div>
-            <div class="sc-toggle">Week</div>
-            <div class="sc-toggle">Month</div>
-          </div>
-          <div class="sc-diet">
-            <div class="sc-diet-card"><div class="sc-diet-icon">🔥</div><div class="sc-diet-label">Calories</div><div class="sc-diet-val">1,840</div></div>
-            <div class="sc-diet-card"><div class="sc-diet-icon">💧</div><div class="sc-diet-label">Hydration</div><div class="sc-diet-val">2.1L</div></div>
-            <div class="sc-diet-card"><div class="sc-diet-icon">😴</div><div class="sc-diet-label">Sleep</div><div class="sc-diet-val">7.2h</div></div>
-            <div class="sc-diet-card"><div class="sc-diet-icon">🏃</div><div class="sc-diet-label">Steps</div><div class="sc-diet-val">6,240</div></div>
-          </div>
-          <div style="background:rgba(26,191,171,0.15);border-radius:8px;padding:7px;margin-bottom:4px;font-size:6px;">
-            <div style="font-weight:700;color:var(--teal);margin-bottom:2px">💡 Today's Tip</div>
-            <div style="opacity:.75">Based on your BP history, try reducing sodium this week. Aim for &lt;2000mg.</div>
-          </div>
-          <div class="sc-nav-row" style="margin-top:4px">🏠 📅 📋 👤</div>
-        </div>
-        <div class="screen-label">Insights</div>
-      </div>
-
-      <!-- Screen 10: Profile -->
-      <div class="screen-card">
-        <div class="screen-notch"></div>
-        <div class="screen-content">
-          <div style="text-align:center">
-            <div class="sc-profile-pic">👤</div>
-            <div style="font-size:8px;font-weight:700;margin-bottom:1px">Nikhitha Reddy</div>
-            <div style="font-size:5.5px;opacity:.4;margin-bottom:6px">+1 480 871 5993</div>
-          </div>
-          <div class="sc-bar">👤 Edit Profile</div>
-          <div class="sc-bar">🔔 Notifications</div>
-          <div class="sc-bar">📊 Dashboard</div>
-          <div class="sc-bar">🗂️ Medical Records</div>
-          <div class="sc-bar">🔒 Security</div>
-          <div class="sc-bar">🌙 Dark Mode</div>
-          <div class="sc-bar">❓ Help Center</div>
-          <div class="sc-bar" style="color:#FF6B6B">← Logout</div>
-        </div>
-        <div class="screen-label">Profile</div>
+        </aside>
       </div>
     </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     PORTFOLIO INTEGRATION SECTIONS
+     ═════════════════════════════════════════════════════════ -->
+
+<!-- CTA Section -->
+<section class="portfolio-cta-section">
+  <div class="portfolio-cta-inner">
+    <button class="btn-primary">Explore More Work</button>
+    <button class="btn-outline">Let's Chat</button>
   </div>
 </section>
 
-<!-- SOLUTIONS / FEATURES -->
-<section class="solutions" id="solutions">
-  <div class="container">
-    <span class="section-label">Key Features</span>
-    <h2 class="section-title">Built around real problems</h2>
-    <p class="section-desc">Every feature in Health Track traces back to a specific pain point uncovered in research. Nothing exists for novelty, each piece of the product earns its place.</p>
-    <div class="solutions-grid">
-      <div class="solution-card s1">
-        <div class="solution-icon">🗂️</div>
-        <h4>Centralized Record Hub</h4>
-        <p>Upload from camera, cloud, or wearable integrations. All records, scanned paper, PDFs, lab results, prescriptions, organized in one searchable, secure vault.</p>
-      </div>
-      <div class="solution-card s2">
-        <div class="solution-icon">👤</div>
-        <h4>Personalized Health Profile</h4>
-        <p>A living health summary that travels with you. New doctors get your complete picture instantly, blood group, current medications, conditions, allergies, and history.</p>
-      </div>
-      <div class="solution-card s3">
-        <div class="solution-icon">💡</div>
-        <h4>Tailored Insights</h4>
-        <p>Analytics powered by your actual data, not generic advice. Diet recommendations, sleep analysis, and preventive alerts calibrated to your lab values and medical history.</p>
-      </div>
-      <div class="solution-card s4">
-        <div class="solution-icon">🔔</div>
-        <h4>Smart Reminders</h4>
-        <p>Medication schedules, follow-up appointments, and health check reminders tied to your diagnosis history, so nothing slips through the cracks during a busy semester or workweek.</p>
-      </div>
-      <div class="solution-card s5">
-        <div class="solution-icon">🔒</div>
-        <h4>Secure Sharing</h4>
-        <p>Share a portable health summary with any provider, via QR code, link, or direct integration. Granular controls let you decide exactly what's visible, and to whom, at all times.</p>
-      </div>
-      <div class="solution-card s6">
-        <div class="solution-icon">⌚</div>
-        <h4>Wearable + App Integration</h4>
-        <p>Connect Apple Health, Google Fit, and fitness trackers so lifestyle data (steps, sleep, heart rate) merges with clinical records to give your doctor the full picture.</p>
-      </div>
-    </div>
+<!-- Case Navigation -->
+<nav class="portfolio-case-nav">
+  <div>
+    <div class="pcn-label">Previous Case</div>
+    <div class="pcn-title">Coming Soon</div>
   </div>
-</section>
-
-<!-- REFLECTION -->
-<section class="reflection" id="reflection">
-  <div class="container">
-    <div class="reflection-grid">
-      <div class="reflection-text">
-        <span class="section-label">Reflection</span>
-        <h2 class="section-title">What this project taught me</h2>
-        <p>Health Track started as a personal story, a friend unable to access her medical records from India to share with doctors in the US. That small moment of frustration became the foundation of a product I genuinely want to see exist in the world.</p>
-        <p>Designing this as an international student gave me a perspective I couldn't have manufactured. I understood the anxiety of navigating a new healthcare system without context, the awkwardness of explaining your history to a doctor who has nothing to reference. That lived experience shaped every design decision.</p>
-        <p>The most important lesson: great UX is not about interfaces, it's about understanding the emotional state of someone at their most vulnerable, and designing something that makes them feel capable and in control. Health is deeply personal. The design has to honor that.</p>
-        <p style="font-style:italic;color:rgba(255,255,255,0.5);font-size:0.9rem;border-left:3px solid var(--teal);padding-left:16px;margin-top:8px">"You've got an excellent UX Strategy Report. You've got an excellent idea and I truly wish there were an app like this on the market!", Dr. Lynne Cooke</p>
-      </div>
-      <div class="takeaways">
-        <div class="takeaway">
-          <div class="takeaway-num">1</div>
-          <div>
-            <h5>Research over assumptions</h5>
-            <p>Surveys and interviews consistently surfaced needs I hadn't anticipated, especially around international data access and provider-side friction.</p>
-          </div>
-        </div>
-        <div class="takeaway">
-          <div class="takeaway-num">2</div>
-          <div>
-            <h5>Cultural context shapes design</h5>
-            <p>Healthcare systems vary enormously across cultures. A design that works for US-only users will fail international ones. Building for diversity from the start matters.</p>
-          </div>
-        </div>
-        <div class="takeaway">
-          <div class="takeaway-num">3</div>
-          <div>
-            <h5>The five planes are a real framework</h5>
-            <p>Garrett's strategy → scope → structure → skeleton → surface process forced discipline. Solving at the wrong plane wastes time. Trust the sequence.</p>
-          </div>
-        </div>
-        <div class="takeaway">
-          <div class="takeaway-num">4</div>
-          <div>
-            <h5>Lo-fi first is faster, not slower</h5>
-            <p>Sketching on paper before opening Figma meant I arrived at better layouts, because I had to think about hierarchy without being distracted by color.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div style="text-align: right;">
+    <div class="pcn-label">Next Case</div>
+    <div class="pcn-title">Coming Soon</div>
   </div>
-</section>
+</nav>
 
-</div>
-
-<!-- ══ PREV / NEXT NAV ══ -->
-<div class="portfolio-case-nav">
-  <a href="cs-home-services.html" class="pcn-link">
-    <div class="pcn-label">Previous</div>
-    <div class="pcn-title">← Home Services Platform</div>
-  </a>
-  <a href="cs-to-go-box.html" class="pcn-link">
-    <div class="pcn-label">Next Case Study</div>
-    <div class="pcn-title">Reimagining the To-Go Box →</div>
-  </a>
-</div>
-
-<!-- ══ PORTFOLIO FOOTER ══ -->
+<!-- Portfolio Footer -->
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-name">Nikhitha Reddy Kalakota</div>
-      <div class="footer-sub">UX/UI DESIGNER · RESEARCHER · NIKHITHAREDDY.COM</div>
+      <div class="footer-sub">Product Designer · Based in Phoenix, AZ</div>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="work.html">Work</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/nikhitha-reddy-0a5a8b15b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:kalakotanikhithareddy@gmail.com">Email</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
     </div>
   </div>
 </footer>
 
+<!-- Mobile Navigation Toggle Script -->
 <script>
-function toggleNav(){
-  document.getElementById('nav-links').classList.toggle('open');
-}
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
 </script>
+
 </body>
 </html>
