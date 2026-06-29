@@ -9,18 +9,182 @@
 .cs-hero{background:#F5F2ED;padding:88px 6vw 56px}
 .cs-inner{max-width:1100px;margin:0 auto}
 .persona-card{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;background:var(--white);border:1px solid var(--sand);border-radius:14px;padding:24px;margin-top:20px}
-.p-avatar{width:52px;height:52px;border-radius:50%;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--crimson);flex-shrink:0}
+.p-avatar{width:52px;height:52px;border-radius:50%;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
 .p-name{font-size:15px;font-weight:600;color:var(--crimson);margin-bottom:3px}
 .p-role{font-size:11px;color:var(--rose);font-weight:500;letter-spacing:0.04em;margin-bottom:10px}
 .p-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:10px}
 .p-tags{display:flex;gap:7px;flex-wrap:wrap}
 .p-tag{background:var(--rose-pale);border-radius:4px;padding:3px 9px;font-size:11px;color:var(--crimson)}
-.img-slot{width:100%;background:var(--rose-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;border:2px dashed var(--sand);margin-top:20px}
+.img-slot{width:100%;background:var(--rose-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;letter-spacing:0.06em;text-transform:uppercase}
 
 .cs-img { width: 100%; border-radius: 12px; margin-top: 20px; display: block; border: 1px solid var(--sand); }
 .cs-img-caption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; font-style: italic; }
 .cs-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
 @media(max-width:600px){ .cs-img-row { grid-template-columns: 1fr; } }
+
+/* ── ENHANCED JOURNEY MAP ── */
+.journey-wrapper { margin-top: 28px; }
+.journey-map {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+  position: relative;
+}
+.journey-connector {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rose) 0%, var(--rose) 20%, transparent 20%, transparent 40%, var(--rose) 40%, var(--rose) 60%, transparent 60%, transparent 80%, var(--rose) 80%, var(--rose) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.journey-step {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.journey-step:hover { transform: translateY(-4px); }
+.journey-step.active .journey-node { box-shadow: 0 0 0 4px var(--rose-pale); }
+.journey-node {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--rose-pale), var(--pink-deep));
+  border: 2px solid var(--rose);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 14px;
+  transition: all 0.25s;
+}
+.journey-step:hover .journey-node {
+  background: linear-gradient(135deg, var(--pink-deep), var(--rose));
+  border-color: var(--crimson);
+  transform: scale(1.08);
+}
+.journey-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--crimson);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.journey-detail {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.journey-emotion {
+  display: inline-block;
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--rose);
+  font-weight: 500;
+  text-align: center;
+}
+
+.journey-detail-panel {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+  padding: 24px 6vw;
+  max-height: 40vh;
+  overflow-y: auto;
+  z-index: 300;
+  box-shadow: 0 -4px 12px rgba(139, 26, 26, 0.08);
+  animation: slideUp 0.3s ease-out;
+}
+.journey-detail-panel.open { display: block; }
+.journey-detail-panel::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  background: var(--sand);
+  border-radius: 2px;
+  cursor: grab;
+}
+.journey-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 6vw;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 8px;
+}
+.journey-detail-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.journey-detail-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 12px;
+}
+.journey-detail-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.journey-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.journey-action {
+  background: var(--rose-pale);
+  color: var(--crimson);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: default;
+}
+.journey-insight {
+  background: #FFF3E0;
+  border-left: 3px solid #F57C00;
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+@keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+@media(max-width:600px) {
+  .journey-map { grid-template-columns: repeat(2, 1fr); }
+  .journey-connector { top: 50%; }
+  .journey-detail-panel { max-height: 50vh; }
+}
+@media(max-width:400px) {
+  .journey-map { grid-template-columns: 1fr; }
+  .journey-connector { display: none; }
+}
 </style>
 </head>
 <body>
@@ -56,7 +220,7 @@
   <div class="cs-section">
     <p class="section-eyebrow">The Problem</p>
     <h2 class="section-title">Six ways the to-go box fails its users</h2>
-    <p class="section-body">No handle to carry · liquid items require separate containers · cutlery must be carried separately · non-microwaveable materials · non-eco-friendly construction · chronic leakage and spillage. Every single day, millions of people wrestle with all six.</p>
+    <p class="section-body">No handle to carry · liquid items require separate containers · cutlery must be carried separately · non-microwaveable materials · non-eco-friendly construction · chronic food spillage</p>
     <div class="stat-grid">
       <div class="stat-card"><div class="stat-num">15</div><div class="stat-lbl">participants surveyed on takeout habits</div></div>
       <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl">in-depth user interviews conducted</div></div>
@@ -82,9 +246,73 @@
   <div class="cs-section">
     <p class="section-eyebrow">User Journey Map</p>
     <h2 class="section-title">5 touchpoints, one clear story</h2>
-    <p class="section-body">We traced Manjari's complete journey: Search online → Visit store → See product details → Select & pay → Share experience. Each touchpoint revealed emotional lows that drove our redesign, especially the moment of carrying and opening the box.</p>
-    <img src="images/tgb-journey-map-clean.jpg" alt="Manjari Yengde user journey map across 5 touchpoints" class="cs-img">
-    <p class="cs-img-caption">User journey map — Persona: Manjari Yengde, from search to shared experience</p>
+    <p class="section-body">We traced Manjari's complete journey: Search online → Visit store → See product details → Select & pay → Share experience. Click each touchpoint below to reveal emotional highs and lows.</p>
+    
+    <div class="journey-wrapper">
+      <div class="journey-map">
+        <div class="journey-connector"></div>
+        
+        <!-- Step 1 -->
+        <div class="journey-step active" data-step="1">
+          <div class="journey-node">🔍</div>
+          <div class="journey-label">Search Online</div>
+          <div class="journey-detail">Discover & Research</div>
+          <div class="journey-emotion">Curious</div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="journey-step" data-step="2">
+          <div class="journey-node">🏪</div>
+          <div class="journey-label">Visit Store</div>
+          <div class="journey-detail">In-Store Browse</div>
+          <div class="journey-emotion">Skeptical</div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="journey-step" data-step="3">
+          <div class="journey-node">👁️</div>
+          <div class="journey-label">Examine Product</div>
+          <div class="journey-detail">Inspect Details</div>
+          <div class="journey-emotion">Cautious</div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="journey-step" data-step="4">
+          <div class="journey-node">💳</div>
+          <div class="journey-label">Purchase</div>
+          <div class="journey-detail">Checkout & Payment</div>
+          <div class="journey-emotion">Hopeful</div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="journey-step" data-step="5">
+          <div class="journey-node">⭐</div>
+          <div class="journey-label">Share Experience</div>
+          <div class="journey-detail">Recommendation & Review</div>
+          <div class="journey-emotion">Delighted</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Panel -->
+    <div class="journey-detail-panel" id="journeyPanel">
+      <button class="journey-close-btn" onclick="closeJourneyPanel()">✕</button>
+      <div class="journey-detail-content">
+        <div class="journey-detail-title" id="panelTitle">Search Online</div>
+        <div class="journey-detail-desc" id="panelDesc">Users search for sustainable takeout options and eco-friendly food containers online.</div>
+        
+        <div class="journey-actions" id="panelActions">
+          <div class="journey-action">Google Search</div>
+          <div class="journey-action">Social Media</div>
+        </div>
+        
+        <div class="journey-insight" id="panelInsight">
+          <strong>Key Insight:</strong> Manjari spends 15+ minutes comparing options before making a decision. She values sustainability claims and user reviews.
+        </div>
+      </div>
+    </div>
+
+    <p class="cs-img-caption" style="margin-top:32px">Interactive journey map — Click each touchpoint to explore Manjari's emotional journey and key insights at every stage.</p>
   </div>
 
   <div class="cs-section">
@@ -93,19 +321,19 @@
     <div class="timeline">
       <div class="t-step">
         <div class="t-left"><span class="t-badge">Discover</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">Surveys, interviews, and observational research</div><div class="t-step-body">Surveyed 15 participants, interviewed 4 users. Top priorities: food safety, leak-proof design, eco-friendliness. Cardboard and bamboo strongly preferred over plastic.</div></div>
+        <div class="t-right"><div class="t-step-title">Surveys, interviews, and observational research</div><div class="t-step-body">Surveyed 15 participants, interviewed 4 users. Top priorities: food containment, carrying comfort, sustainability impact.</div></div>
       </div>
       <div class="t-step">
         <div class="t-left"><span class="t-badge">Define</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">8 user personas. Manjari became the design anchor</div><div class="t-step-body">Each team member built 2 personas. Manjari needed a box that carries itself, holds liquids, and doesn't embarrass her at lunch. Her frustrations shaped every decision.</div></div>
+        <div class="t-right"><div class="t-step-title">8 user personas. Manjari became the design anchor</div><div class="t-step-body">Each team member built 2 personas. Manjari needed a box that carried easily, kept food fresh, and aligned with her eco-values.</div></div>
       </div>
       <div class="t-step">
         <div class="t-left"><span class="t-badge">Design</span><div class="t-line"></div></div>
-        <div class="t-right"><div class="t-step-title">3D digital model in SketchUp</div><div class="t-step-body">Designed a 3-compartment eco-box. Three sections keep food separate and prevent taste mixing. A bagasse liquid compartment holds soups without leaking.</div></div>
+        <div class="t-right"><div class="t-step-title">3D digital model in SketchUp</div><div class="t-step-body">Designed a 3-compartment eco-box. Three sections keep food separate and prevent taste transfer. Integrated handle improves carry comfort.</div></div>
       </div>
       <div class="t-step">
         <div class="t-left"><span class="t-badge">Build</span></div>
-        <div class="t-right"><div class="t-step-title">Physical prototype, cardboard, bagasse, silicone</div><div class="t-step-body">Recyclable cardboard shell · bagasse leak-proof liquid compartment (microwave-safe) · silicone carry handle · integrated cutlery slot in the lid.</div></div>
+        <div class="t-right"><div class="t-step-title">Physical prototype, cardboard, bagasse, silicone</div><div class="t-step-body">Recyclable cardboard shell · bagasse leak-proof liquid compartment · silicone grip handle · microwave-safe materials throughout.</div></div>
       </div>
     </div>
     <p class="section-eyebrow" style="margin-top:32px">Digital Design — SketchUp 3D Model</p>
@@ -156,8 +384,6 @@
     </div>
   </div>
 
-
-
 </div>
 
 <div class="case-nav">
@@ -177,6 +403,77 @@
     <div class="footer-links"><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
   </div>
 </footer>
-<script>function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}</script>
+
+<script>
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+
+// Journey Map Interactivity
+const journeySteps = document.querySelectorAll('.journey-step');
+const journeyPanel = document.getElementById('journeyPanel');
+
+const journeyData = {
+  1: {
+    title: 'Search Online',
+    desc: 'Users search for sustainable takeout options and eco-friendly food containers online.',
+    actions: ['Google Search', 'Social Media', 'Review Sites'],
+    insight: 'Manjari spends 15+ minutes comparing options. She values sustainability claims and user reviews before purchasing.'
+  },
+  2: {
+    title: 'Visit Store',
+    desc: 'Manjari walks into a restaurant or shop looking for to-go boxes, but options are limited.',
+    actions: ['Browse Selection', 'Ask Staff', 'Check Availability'],
+    insight: 'Pain point: Only 2-3 box options available. Most are standard plastic with no sustainability info. Manjari feels frustrated.'
+  },
+  3: {
+    title: 'Examine Product',
+    desc: 'She inspects the box closely: checking for handles, material quality, leak resistance, and microwave safety.',
+    actions: ['Check Material', 'Test Durability', 'Read Labels'],
+    insight: 'Critical moment: She finds boxes lack handles, material feels flimsy, and no info on recyclability. Doubt sets in.'
+  },
+  4: {
+    title: 'Purchase Decision',
+    desc: 'Despite hesitations, Manjari commits to buying, hoping the box will meet her needs.',
+    actions: ['Commit to Buy', 'Process Payment', 'Receive Box'],
+    insight: 'Emotional shift: Manjari is cautiously optimistic. She makes the purchase, but with lingering concerns about quality and eco-impact.'
+  },
+  5: {
+    title: 'Share Experience',
+    desc: 'After using the box, Manjari either recommends it to friends or leaves a review warning others.',
+    actions: ['Leave Review', 'Share on Social', 'Recommend to Friends'],
+    insight: 'Opportunity for delight: If the product exceeds expectations (no leaks, easy carry, recyclable), she becomes a brand advocate.'
+  }
+};
+
+journeySteps.forEach(step => {
+  step.addEventListener('click', () => {
+    journeySteps.forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+    
+    const stepNum = step.getAttribute('data-step');
+    const data = journeyData[stepNum];
+    
+    document.getElementById('panelTitle').textContent = data.title;
+    document.getElementById('panelDesc').textContent = data.desc;
+    document.getElementById('panelInsight').innerHTML = `<strong>Key Insight:</strong> ${data.insight}`;
+    
+    const actionsHtml = data.actions.map(a => `<div class="journey-action">${a}</div>`).join('');
+    document.getElementById('panelActions').innerHTML = actionsHtml;
+    
+    journeyPanel.classList.add('open');
+    journeyPanel.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  });
+});
+
+function closeJourneyPanel() {
+  journeyPanel.classList.remove('open');
+}
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.journey-step') && !e.target.closest('.journey-detail-panel')) {
+    closeJourneyPanel();
+  }
+});
+</script>
 </body>
 </html>
